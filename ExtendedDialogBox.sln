@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedDialogBox", "ExtendedDialogBox\ExtendedDialogBox.csproj", "{EDD78A4B-06D8-4537-A3EC-83110891C6CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedDialogBoxApp", "ExtendedDialogBoxApp\ExtendedDialogBoxApp.csproj", "{68B18826-1CE9-4AFA-8507-65BCCE387FDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDD78A4B-06D8-4537-A3EC-83110891C6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD78A4B-06D8-4537-A3EC-83110891C6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD78A4B-06D8-4537-A3EC-83110891C6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD78A4B-06D8-4537-A3EC-83110891C6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06F9B8C5-FB0A-4BC4-81BA-C93135C66856}
+	EndGlobalSection
+EndGlobal
