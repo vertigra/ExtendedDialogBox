@@ -10,33 +10,43 @@ namespace ExtendedDialogBox
         public DialogBox()
         {
             InitializeComponent();
-
-            //CancelButtonVisiblity = Visibility.Collapsed;
         }
 
         #region CancelButton
 
         public Visibility CancelButtonVisiblity
         {
-            get { return (Visibility) GetValue(CancelButtonProperty); }
-            set { SetValue(CancelButtonProperty, value); }
-        } 
+            get { return (Visibility)GetValue(CancelButtonVisiblityProperty); }
+            set { SetValue(CancelButtonVisiblityProperty, value); }
+        }
 
-        private static readonly DependencyProperty CancelButtonProperty =
+        private static readonly DependencyProperty CancelButtonVisiblityProperty =
             DependencyProperty.Register(nameof(CancelButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
 
 
-        internal RelayCommand CancelButtonCommand
+        /*internal RelayCommand ButtonCommand
         {
             get { return (RelayCommand)GetValue(CancelButtonCommandProperty); }
             set { SetValue(CancelButtonCommandProperty, value); }
         }
-
+        
+        
         public static readonly DependencyProperty CancelButtonCommandProperty =
-            DependencyProperty.Register(nameof(CancelButtonCommand), typeof(RelayCommand),
-                typeof(DialogBox), null);
+            DependencyProperty.Register(nameof(ButtonCommand), typeof(RelayCommand),
+                typeof(DialogBox), null);*/
 
+        
+
+        public RelayCommand ButtonCommand => new RelayCommand(obj =>
+        {
+            MessageBox.Show("Uieee");
+            //MessageBoxResult result = (MessageBoxResult)obj;
+
+            //Result = result;
+        });
+
+        public MessageBoxResult Result {get; set;}
 
         #endregion
 

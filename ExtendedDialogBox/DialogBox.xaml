@@ -90,12 +90,14 @@
                         Height="26"
                         Margin="5,0"
                         HorizontalAlignment="Right"
-                        IsCancel="True"
+                        
                         DockPanel.Dock="Right"
-                        Command="{ Binding CancelButtonCommand, ElementName=dialogBox }"
+                        Command="{ Binding ButtonCommand, ElementName=dialogBox }"
+                        CommandParameter="Cancel"
                         Visibility="{ Binding CancelButtonVisiblity, ElementName=dialogBox }" >
                     <Label Name="Label_Cancel" Padding="0" Margin="10,0">_Cancel</Label>
                 </Button>
+                <!--IsCancel="True" -->
                 <!-- End Cancel Button -->
 
                 <!-- No Button -->

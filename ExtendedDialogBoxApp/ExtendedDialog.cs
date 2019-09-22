@@ -1,4 +1,6 @@
 ﻿using ExtendedDialogBox;
+using ExtendedDialogBox.PublicDialogBox;
+using System.Windows;
 
 namespace ExtendedDialogBoxApp
 {
@@ -6,10 +8,13 @@ namespace ExtendedDialogBoxApp
     {
         public void ShowQuery()
         {
-            DialogBox dialogBox = new DialogBox();
-            dialogBox.CancelButtonVisiblity = System.Windows.Visibility.Visible;
 
-            dialogBox.Show();
+            QueryDialogBox dialogBox = new QueryDialogBox();
+
+            MessageBoxResult result = dialogBox.YesNoButton();
+
+            /*if (result == MessageBoxResult.Cancel)
+                MessageBox.Show("Uieee");*/
         }
 
     }

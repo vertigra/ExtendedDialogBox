@@ -3,12 +3,13 @@ using System.Windows.Input;
 
 namespace ExtendedDialogBox.Command
 {
-    internal class RelayCommand
+    public class RelayCommand
     {
         private readonly Action<object> execute;
         private readonly Func<object, bool> canExecute;
 
-        internal RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
+
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
             this.execute = execute;
             this.canExecute = canExecute;
