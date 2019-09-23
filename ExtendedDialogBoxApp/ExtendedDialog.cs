@@ -11,7 +11,7 @@ namespace ExtendedDialogBoxApp
 
             QueryDialogBox dialogBox = new QueryDialogBox();
 
-            MessageBoxResult result = dialogBox.YesNoButton();
+            dialogBox.YesNoButton();
 
             /*if (result == MessageBoxResult.Cancel)
                 MessageBox.Show("Uieee");*/

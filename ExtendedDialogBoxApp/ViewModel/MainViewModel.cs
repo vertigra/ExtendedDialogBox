@@ -1,10 +1,6 @@
-﻿
-
-using ExtendedDialogBox;
-using ExtendedDialogBoxAppCommand;
+﻿using ExtendedDialogBoxAppCommand;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
 
 namespace ExtendedDialogBoxApp.ViewModel
 {

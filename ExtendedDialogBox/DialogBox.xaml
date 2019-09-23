@@ -90,8 +90,8 @@
                         Height="26"
                         Margin="5,0"
                         HorizontalAlignment="Right"
-                        
                         DockPanel.Dock="Right"
+                        IsCancel="True"
                         Command="{ Binding ButtonCommand, ElementName=dialogBox }"
                         CommandParameter="Cancel"
                         Visibility="{ Binding CancelButtonVisiblity, ElementName=dialogBox }" >
