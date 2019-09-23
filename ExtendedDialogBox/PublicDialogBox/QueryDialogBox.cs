@@ -1,21 +1,24 @@
 ﻿using ExtendedDialogBox.Command;
-using System.ComponentModel;
 using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
     public class QueryDialogBox
     {
-        public void YesNoButton()
+        private DialogBox mDialogBox;
+
+        public QueryDialogBox()
         {
-            DialogBox dialogBox = new DialogBox
-            {
-                CancelButtonVisiblity = Visibility.Visible
-            };
+            mDialogBox = new DialogBox();
+        }
+        public MessageBoxResult YesNoButton()
+        {
+            mDialogBox.YesButtonVisiblity = Visibility.Visible;
+            mDialogBox.NoButtonVisiblity = Visibility.Visible;
 
-            dialogBox.ButtonCommand = ButtonCommands;
+            mDialogBox.ShowDialog();
 
-            dialogBox.ShowDialog();
+            return Result;
         }
 
         private RelayCommand buttonCommand;
@@ -23,20 +26,35 @@ namespace ExtendedDialogBox.PublicDialogBox
         {
             get
             {
-                //todo in a separate thread
                 return buttonCommand ??
                        (buttonCommand = new RelayCommand(obj =>
                        {
+                           string result = (string) obj;
 
-                           string result = obj as string;
+                           switch (result)
+                           {
+                               case "Cancel":
+                                   Result = MessageBoxResult.Cancel;
+                                   break;
+                               case "No":
+                                   Result = MessageBoxResult.No;
+                                   break;
+                               case "Yes":
+                                   Result = MessageBoxResult.Yes;
+                                   break;
+                               case "Ok":
+                                   Result = MessageBoxResult.OK;
+                                   break;
+                               default:
+                                   Result = MessageBoxResult.None;
+                                   break;
+                           }
 
-                           if(result.Equals("Cancel"))
-                               MessageBox.Show("Ueeee");
-                          
+                           mDialogBox.Close();
                        }));
             }
         }
 
-
+        private MessageBoxResult Result { get; set; }
     }
 }

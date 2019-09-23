@@ -38,7 +38,12 @@
             </DockPanel>
         </Grid>
 
-        <Grid Grid.Row="1" Background="White" MinHeight="0" Name="Password_Grid">
+        <Grid 
+            Grid.Row="1" 
+            Background="White" 
+            MinHeight="0" 
+            Name="PasswordGrid"
+            Visibility="{Binding PasswordBoxesVisiblity, ElementName=dialogBox}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -97,7 +102,6 @@
                         Visibility="{ Binding CancelButtonVisiblity, ElementName=dialogBox }" >
                     <Label Name="Label_Cancel" Padding="0" Margin="10,0">_Cancel</Label>
                 </Button>
-                <!--IsCancel="True" -->
                 <!-- End Cancel Button -->
 
                 <!-- No Button -->
@@ -108,7 +112,8 @@
                         Margin="5,0"
                         HorizontalAlignment="Right"
                         DockPanel.Dock="Right"
-                        Command="{ Binding NoButtonCommand, ElementName=dialogBox }"
+                        Command="{ Binding ButtonCommand, ElementName=dialogBox }"
+                        CommandParameter="No"
                         Visibility="{ Binding NoButtonVisiblity, ElementName=dialogBox }" >
 
                     <Label Name="Label_No" Padding="0" Margin="10,0">_No</Label>
@@ -123,7 +128,8 @@
                         Margin="35,0,5,0"
                         HorizontalAlignment="Right"
                         DockPanel.Dock="Right"
-                        Command="{ Binding YesButtonCommand, ElementName=dialogBox }"
+                        Command="{ Binding ButtonCommand, ElementName=dialogBox }"
+                        CommandParameter="Yes"
                         Visibility="{ Binding YesButtonVisiblity, ElementName=dialogBox }" >
 
                     <Label Name="Label_Yes" Padding="0" Margin="10,0">_Yes</Label>
@@ -137,7 +143,8 @@
                         Margin="35,0,5,0"
                         HorizontalAlignment="Right"
                         Height="26"
-                        Command="{ Binding OkButtonCommand, ElementName=dialogBox }"
+                        Command="{ Binding ButtonCommand, ElementName=dialogBox }"
+                        CommandParameter="Ok"
                         Visibility="{ Binding OkButtonVisiblity, ElementName=dialogBox }" >
 
                     <Label Name="Label_Ok" Padding="0" Margin="10,0">_OK</Label>

@@ -2,21 +2,25 @@
 using System.Windows;
 namespace ExtendedDialogBox
 {
-    /// <summary>
-    /// Логика взаимодействия для UserControl1.xaml
-    /// </summary>
     public partial class DialogBox
     {
         internal DialogBox()
         {
             InitializeComponent();
+
+            //by default all controls collapsed
+            CancelButtonVisiblity = Visibility.Collapsed;
+            NoButtonVisiblity = Visibility.Collapsed;
+            YesButtonVisiblity = Visibility.Collapsed;
+            OkButtonVisiblity = Visibility.Collapsed;
+            PasswordBoxesVisiblity = Visibility.Collapsed;
         }
 
-        #region CancelButton
+        #region CancelButton Visiblity
 
         internal Visibility CancelButtonVisiblity
         {
-            get { return (Visibility)GetValue(CancelButtonVisiblityProperty); }
+            get { return (Visibility) GetValue(CancelButtonVisiblityProperty); }
             set { SetValue(CancelButtonVisiblityProperty, value); }
         }
 
@@ -24,97 +28,79 @@ namespace ExtendedDialogBox
             DependencyProperty.Register(nameof(CancelButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
 
-      
-        internal RelayCommand ButtonCommand
-        {
-            get { return (RelayCommand) GetValue(CancelButtonCommandProperty); }
-            set { SetValue(CancelButtonCommandProperty, value); }
-        }
-        
-        
-        private static readonly DependencyProperty CancelButtonCommandProperty =
-            DependencyProperty.Register(nameof(ButtonCommand), typeof(RelayCommand),
-                typeof(DialogBox), null);
-
-        
-
         #endregion
 
-        #region NoButton
+        #region NoButton Visiblity
 
         internal Visibility NoButtonVisiblity
         {
-            get { return (Visibility)GetValue(NoButtonProperty); }
-            set { SetValue(NoButtonProperty, value); }
+            get { return (Visibility) GetValue(NoButtonVisiblityProperty); }
+            set { SetValue(NoButtonVisiblityProperty, value); }
         }
 
-        private static readonly DependencyProperty NoButtonProperty =
+        private static readonly DependencyProperty NoButtonVisiblityProperty =
             DependencyProperty.Register(nameof(NoButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
 
 
-        internal RelayCommand NoButtonCommand
-        {
-            get { return (RelayCommand)GetValue(NoButtonCommandProperty); }
-            set { SetValue(NoButtonCommandProperty, value); }
-        }
-
-        private static readonly DependencyProperty NoButtonCommandProperty =
-            DependencyProperty.Register(nameof(NoButtonCommand), typeof(RelayCommand),
-                typeof(DialogBox), null);
-
         #endregion
 
-        #region YesButton
+        #region YesButton Visiblity
 
         internal Visibility YesButtonVisiblity
         {
-            get { return (Visibility)GetValue(YesButtonProperty); }
-            set { SetValue(YesButtonProperty, value); }
+            get { return (Visibility)GetValue(YesButtonVisiblityProperty); }
+            set { SetValue(YesButtonVisiblityProperty, value); }
         }
 
-        private static readonly DependencyProperty YesButtonProperty =
+        private static readonly DependencyProperty YesButtonVisiblityProperty =
             DependencyProperty.Register(nameof(YesButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
 
 
-        internal RelayCommand YesButtonCommand
-        {
-            get { return (RelayCommand)GetValue(YesButtonCommandProperty); }
-            set { SetValue(YesButtonCommandProperty, value); }
-        }
-
-        private static readonly DependencyProperty YesButtonCommandProperty =
-            DependencyProperty.Register(nameof(YesButtonCommand), typeof(RelayCommand),
-                typeof(DialogBox), null);
-
         #endregion
 
-        #region OkButton
+        #region OkButton Visiblity
 
         internal Visibility OkButtonVisiblity
         {
-            get { return (Visibility)GetValue(OkButtonProperty); }
-            set { SetValue(OkButtonProperty, value); }
+            get { return (Visibility)GetValue(OkButtonVisiblityProperty); }
+            set { SetValue(OkButtonVisiblityProperty, value); }
         }
 
-        private static readonly DependencyProperty OkButtonProperty =
+        private static readonly DependencyProperty OkButtonVisiblityProperty =
             DependencyProperty.Register(nameof(OkButtonVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
-
-
-        internal RelayCommand OkButtonCommand
-        {
-            get { return (RelayCommand)GetValue(OkButtonCommandProperty); }
-            set { SetValue(OkButtonCommandProperty, value); }
-        }
-
-        private static readonly DependencyProperty OkButtonCommandProperty =
-            DependencyProperty.Register(nameof(OkButtonCommand), typeof(RelayCommand),
                 typeof(DialogBox), null);
 
         #endregion
 
+        #region PasswordBoxes Visiblity
 
+        internal Visibility PasswordBoxesVisiblity
+        {
+            get { return (Visibility)GetValue(PasswordBoxesProperty); }
+            set { SetValue(PasswordBoxesProperty, value); }
+        }
+
+        private static readonly DependencyProperty PasswordBoxesProperty =
+            DependencyProperty.Register(nameof(PasswordBoxesVisiblity), typeof(Visibility),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        #region Button RelayCommand
+
+        internal RelayCommand ButtonCommand
+        {
+            get { return (RelayCommand)GetValue(CancelButtonCommandProperty); }
+            set { SetValue(CancelButtonCommandProperty, value); }
+        }
+
+
+        private static readonly DependencyProperty CancelButtonCommandProperty =
+            DependencyProperty.Register(nameof(ButtonCommand), typeof(RelayCommand),
+                typeof(DialogBox), null);
+
+        #endregion
     }
 }

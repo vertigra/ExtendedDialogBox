@@ -1,5 +1,4 @@
-﻿using ExtendedDialogBox;
-using ExtendedDialogBox.PublicDialogBox;
+﻿using ExtendedDialogBox.PublicDialogBox;
 using System.Windows;
 
 namespace ExtendedDialogBoxApp
@@ -11,10 +10,10 @@ namespace ExtendedDialogBoxApp
 
             QueryDialogBox dialogBox = new QueryDialogBox();
 
-            dialogBox.YesNoButton();
+            MessageBoxResult result = dialogBox.YesNoButton();
 
-            /*if (result == MessageBoxResult.Cancel)
-                MessageBox.Show("Uieee");*/
+            if (result == MessageBoxResult.Cancel)
+                MessageBox.Show("Uieee");
         }
 
     }
