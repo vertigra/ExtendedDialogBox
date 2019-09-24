@@ -10,10 +10,15 @@
         Icon="Icons/blankicon.ico"
              
         mc:Ignorable="d" 
-        ShowInTaskbar="False" Topmost="True"
-        ResizeMode="NoResize" SizeToContent="WidthAndHeight"
-        TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" UseLayoutRounding="True"
-        Title="" MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
+        ShowInTaskbar="False" 
+        Topmost="True"
+        ResizeMode="NoResize" 
+        SizeToContent="WidthAndHeight"
+        TextOptions.TextFormattingMode="Display" 
+        TextOptions.TextRenderingMode="ClearType" 
+        UseLayoutRounding="True"
+        Title="{Binding DialogBoxTitle, ElementName=dialogBox}" 
+        MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -23,13 +28,14 @@
         
         <Grid Grid.Row="0" Background="White" MinHeight="69">
             <DockPanel>
-                <Image Name="Image_MessageBox"
+                <Image Name="ImageMessageBox"
                        Width="32" Height="32"
                        HorizontalAlignment="Left"
                        DockPanel.Dock="Left"
                        Margin="30,0,0,0" />
                 
-                <TextBlock Name="TextBlock_Message"
+                <TextBlock Name="TextBlockMessage"
+                           Text="{Binding Message, ElementName=dialogBox}"
                            TextWrapping="Wrap"
                            MaxWidth="500"
                            Width="Auto"
@@ -101,14 +107,14 @@
                         CommandParameter="Cancel"
                         Visibility="{ Binding CancelButtonVisiblity, ElementName=dialogBox }" >
                     <Label 
-                        Name="Label_Cancel" 
+                        Name="LabelCancel" 
                         Padding="0" Margin="10,0" 
                         Content="{Binding CancelButtonLabel, ElementName=dialogBox}"/>
                 </Button>
                 <!-- End Cancel Button -->
 
                 <!-- No Button -->
-                <Button Name="Button_No"
+                <Button Name="ButtonNo"
                         MinWidth="88"
                         Width="Auto"
                         Height="26"
@@ -119,7 +125,7 @@
                         CommandParameter="No"
                         Visibility="{ Binding NoButtonVisiblity, ElementName=dialogBox }" >
 
-                    <Label Name="Label_No" 
+                    <Label Name="LabelNo" 
                            Padding="0" 
                            Margin="10,0"
                            Content="{Binding NoButtonLabel, ElementName=dialogBox}" />
@@ -127,7 +133,7 @@
                 <!-- End No Button -->
 
                 <!-- Yes Button -->
-                <Button Name="Button_Yes"
+                <Button Name="ButtonYes"
                         MinWidth="88"
                         Width="Auto"
                         Height="26"
@@ -138,7 +144,7 @@
                         CommandParameter="Yes"
                         Visibility="{ Binding YesButtonVisiblity, ElementName=dialogBox }" >
 
-                    <Label Name="Label_Yes" 
+                    <Label Name="LabelYes" 
                            Padding="0" 
                            Margin="10,0"
                            Content="{Binding YesButtonLabel, ElementName=dialogBox}" />
@@ -146,7 +152,7 @@
                 <!-- End Yes Button -->
 
                 <!-- OK Button -->
-                <Button Name="Button_OK"
+                <Button Name="ButtonOK"
                         MinWidth="88"
                         Width="Auto"
                         Margin="35,0,5,0"
@@ -156,7 +162,7 @@
                         CommandParameter="Ok"
                         Visibility="{ Binding OkButtonVisiblity, ElementName=dialogBox }" >
 
-                    <Label Name="Label_Ok" 
+                    <Label Name="LabelOk" 
                            Padding="0" 
                            Margin="10,0"
                            Content="{Binding OkButtonLabel, ElementName=dialogBox}" />

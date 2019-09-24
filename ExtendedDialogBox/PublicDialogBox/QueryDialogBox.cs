@@ -17,7 +17,6 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
-            mDialogBox.PasswordBoxesVisiblity = Visibility.Visible;
 
             mDialogBox.ShowDialog();
 
