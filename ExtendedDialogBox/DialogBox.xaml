@@ -55,12 +55,12 @@
 
             <Label Grid.Column="0"
                    Grid.Row="0"
-                   Content="Пароль" Margin="10 10 10 15"  
+                   Content="{Binding PasswordLabel, ElementName=dialogBox}" Margin="10 10 10 15"  
                    VerticalAlignment="Center"/>
 
             <PasswordBox Grid.Row="0"
                          Grid.Column="1"
-                         Name="Password_InputBox"
+                         Name="PasswordInputBox"
                          MinWidth="150"
                          MaxWidth="500"
                          Width="Auto"
@@ -70,12 +70,12 @@
 
             <Label Grid.Column="0"
                    Grid.Row="1"
-                   Content="Подтверждение" Margin="10 0 10 15"  
+                   Content="{Binding PasswordConfirmationLabel, ElementName=dialogBox}" Margin="10 0 10 15"  
                    VerticalAlignment="Center"/>
 
             <PasswordBox Grid.Row="1"
                          Grid.Column="1"
-                         Name="Password_Confirmation"
+                         Name="PasswordConfirmation"
                          MinWidth="150"
                          MaxWidth="500"
                          Width="Auto"

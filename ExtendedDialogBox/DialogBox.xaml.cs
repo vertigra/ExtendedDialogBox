@@ -20,6 +20,10 @@ namespace ExtendedDialogBox
             NoButtonLabel = "No";
             YesButtonLabel = "Yes";
             OkButtonLabel = "OK";
+
+            //default contetnt for password box label
+            PasswordLabel = "Пароль";
+            PasswordConfirmationLabel = "Подтверждение";
         }
 
         #region Button Visiblity
@@ -155,6 +159,39 @@ namespace ExtendedDialogBox
         private static readonly DependencyProperty PasswordBoxesProperty =
             DependencyProperty.Register(nameof(PasswordBoxesVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
+
+        #endregion
+
+        #region PasswordBox Label
+
+        # region Password Label
+
+        internal string PasswordLabel
+        {
+            get { return (string)GetValue(PasswordLabelProperty); }
+            set { SetValue(PasswordLabelProperty, value); }
+        }
+
+        private static readonly DependencyProperty PasswordLabelProperty =
+            DependencyProperty.Register(nameof(PasswordLabel), typeof(string),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        # region Password Label
+
+        internal string PasswordConfirmationLabel
+        {
+            get { return (string)GetValue(PasswordConfirmationLabelProperty); }
+            set { SetValue(PasswordConfirmationLabelProperty, value); }
+        }
+
+        private static readonly DependencyProperty PasswordConfirmationLabelProperty =
+            DependencyProperty.Register(nameof(PasswordConfirmationLabel), typeof(string),
+                typeof(DialogBox), null);
+
+        #endregion
+
 
         #endregion
 
