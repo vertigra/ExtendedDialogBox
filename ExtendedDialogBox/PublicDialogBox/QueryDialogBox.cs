@@ -13,6 +13,8 @@ namespace ExtendedDialogBox.PublicDialogBox
         }
         public MessageBoxResult YesNoButton()
         {
+            mDialogBox.OkButtonVisiblity = Visibility.Visible;
+            mDialogBox.CancelButtonVisiblity = Visibility.Visible;
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
 

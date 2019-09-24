@@ -8,13 +8,21 @@ namespace ExtendedDialogBox
         {
             InitializeComponent();
 
-            //by default all controls collapsed
+            //default all controls collapsed
             CancelButtonVisiblity = Visibility.Collapsed;
             NoButtonVisiblity = Visibility.Collapsed;
             YesButtonVisiblity = Visibility.Collapsed;
             OkButtonVisiblity = Visibility.Collapsed;
             PasswordBoxesVisiblity = Visibility.Collapsed;
+
+            //default content for label
+            CancelButtonLabel = "Cancel";
+            NoButtonLabel = "No";
+            YesButtonLabel = "Yes";
+            OkButtonLabel = "OK";
         }
+
+        #region Button Visiblity
 
         #region CancelButton Visiblity
 
@@ -71,6 +79,68 @@ namespace ExtendedDialogBox
         private static readonly DependencyProperty OkButtonVisiblityProperty =
             DependencyProperty.Register(nameof(OkButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
+
+        #endregion
+
+        #endregion
+
+        #region Button Label
+
+        #region CancelButton Label
+
+        internal string CancelButtonLabel
+        {
+            get { return (string)GetValue(CancelButtonLabelProperty); }
+            set { SetValue(CancelButtonLabelProperty, value); }
+        }
+
+        private static readonly DependencyProperty CancelButtonLabelProperty =
+            DependencyProperty.Register(nameof(CancelButtonLabel), typeof(string),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        #region NoButton Label
+
+        internal string NoButtonLabel
+        {
+            get { return (string)GetValue(NoButtonLabelProperty); }
+            set { SetValue(NoButtonLabelProperty, value); }
+        }
+
+        private static readonly DependencyProperty NoButtonLabelProperty =
+            DependencyProperty.Register(nameof(NoButtonLabel), typeof(string),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        #region YesButton Label
+
+        internal string YesButtonLabel 
+        {
+            get { return (string) GetValue(YesButtonLabelProperty); }
+            set { SetValue(YesButtonLabelProperty, value); }
+        }
+
+        private static readonly DependencyProperty YesButtonLabelProperty =
+            DependencyProperty.Register(nameof(YesButtonLabel), typeof(string),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        #region OkButton Label
+
+        internal string OkButtonLabel
+        {
+            get { return (string)GetValue(OkButtonLabelProperty); }
+            set { SetValue(OkButtonLabelProperty, value); }
+        }
+
+        private static readonly DependencyProperty OkButtonLabelProperty =
+            DependencyProperty.Register(nameof(OkButtonLabel), typeof(string),
+                typeof(DialogBox), null);
+
+        #endregion
 
         #endregion
 
