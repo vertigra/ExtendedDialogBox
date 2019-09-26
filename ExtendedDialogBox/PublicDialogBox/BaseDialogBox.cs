@@ -14,6 +14,8 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.ButtonCommand = ButtonCommand;
         }
 
+        #region Command
+
         private RelayCommand buttonCommand;
         private RelayCommand ButtonCommand
         {
@@ -56,5 +58,69 @@ namespace ExtendedDialogBox.PublicDialogBox
         }
 
         internal MessageBoxResult Result { get; private set; }
+
+        #endregion
+
+        
+        public MessageBoxResult OkButton(string okButtonContent = null)
+        {
+            if (okButtonContent != null)
+                mDialogBox.YesButtonLabel = okButtonContent;
+
+            mDialogBox.OkButtonVisiblity = Visibility.Visible;
+
+            mDialogBox.ShowDialog();
+
+            return Result;
+        }
+
+
+        public MessageBoxResult YesNoButton(string yesButtonContent = null, string noButtonContent = null)
+        {
+            if (yesButtonContent != null)
+                mDialogBox.YesButtonLabel = yesButtonContent;
+
+            if (noButtonContent != null)
+                mDialogBox.NoButtonLabel = noButtonContent;
+
+            mDialogBox.YesButtonVisiblity = Visibility.Visible;
+            mDialogBox.NoButtonVisiblity = Visibility.Visible;
+
+            mDialogBox.ShowDialog();
+
+            return Result;
+        }
+
+        public MessageBoxResult YesCancelButton(string yesButtonContent = null, string cancelButtonContent = null)
+        {
+            if (yesButtonContent != null)
+                mDialogBox.YesButtonLabel = yesButtonContent;
+
+            if (cancelButtonContent != null)
+                mDialogBox.CancelButtonLabel = cancelButtonContent;
+
+            mDialogBox.YesButtonVisiblity = Visibility.Visible;
+            mDialogBox.CancelButtonVisiblity = Visibility.Visible;
+
+            mDialogBox.ShowDialog();
+
+            return Result;
+        }
+
+        public MessageBoxResult OkCancelButton(string okButtonContent = null, string cancelButtonContent = null)
+        {
+            if (okButtonContent != null)
+                mDialogBox.OkButtonLabel = okButtonContent;
+
+            if (cancelButtonContent != null)
+                mDialogBox.OkButtonLabel = cancelButtonContent;
+
+            mDialogBox.OkButtonVisiblity = Visibility.Visible;
+            mDialogBox.CancelButtonVisiblity = Visibility.Visible;
+
+            mDialogBox.ShowDialog();
+
+            return Result;
+        }
     }
 }
