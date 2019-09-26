@@ -7,8 +7,6 @@
         xmlns:local="clr-namespace:ExtendedDialogBox"     
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
-        Icon="Icons/blankicon.ico"
-             
         mc:Ignorable="d" 
         ShowInTaskbar="False" 
         Topmost="True"
@@ -17,6 +15,7 @@
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType" 
         UseLayoutRounding="True"
+        Icon="{Binding WindowTitleIcon, ElementName=dialogBox}"
         Title="{Binding DialogBoxTitle, ElementName=dialogBox}" 
         MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
     <Grid>
@@ -32,8 +31,10 @@
                        Width="32" Height="32"
                        HorizontalAlignment="Left"
                        DockPanel.Dock="Left"
-                       Margin="30,0,0,0" />
-                
+                       Margin="30,0,0,0"
+                       Visibility="{Binding ImageVisiblity, ElementName=dialogBox}"
+                       Source="{Binding MessageIcon, ElementName=dialogBox}"/>
+
                 <TextBlock Name="TextBlockMessage"
                            Text="{Binding Message, ElementName=dialogBox}"
                            TextWrapping="Wrap"

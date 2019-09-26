@@ -17,6 +17,12 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
+            
+            //set as base parametr
+            mDialogBox.MessageImage = MessageBoxImage.Warning;
+
+            mDialogBox.Message = "Warning";
+            mDialogBox.Title = "Warning!";
 
             mDialogBox.ShowDialog();
 

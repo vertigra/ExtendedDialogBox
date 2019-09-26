@@ -1,5 +1,10 @@
 ﻿using ExtendedDialogBox.Command;
+using System;
+using System.Drawing;
 using System.Windows;
+using System.Windows.Media;
+using static IconHeleper;
+
 namespace ExtendedDialogBox
 {
     public partial class DialogBox
@@ -8,6 +13,20 @@ namespace ExtendedDialogBox
         {
             InitializeComponent();
 
+
+            InitControls();
+        }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            if (MessageImage == MessageBoxImage.None)
+                IconHelper.RemoveIcon(this);
+
+            
+        }
+
+        private void InitControls()
+        {
             //default all controls collapsed
             CancelButtonVisiblity = Visibility.Collapsed;
             NoButtonVisiblity = Visibility.Collapsed;
@@ -212,13 +231,96 @@ namespace ExtendedDialogBox
 
         internal string Message
         {
-            get { return (string)GetValue(MessageProperty); }
-            set { SetValue(MessageProperty, value); }
+            get { return (string) GetValue(MessageProperty); }
+            set { SetValue (MessageProperty, value); }
         }
 
         private static readonly DependencyProperty MessageProperty =
             DependencyProperty.Register(nameof(Message), typeof(string),
                 typeof(DialogBox), null);
+
+        #endregion
+
+        #region DialogBox Image
+
+        #region ImageVisiblity
+
+        internal Visibility ImageVisiblity
+        {
+            get { return (Visibility)GetValue(ImageVisiblityProperty); }
+            set { SetValue(ImageVisiblityProperty, value); }
+        }
+
+        private static readonly DependencyProperty ImageVisiblityProperty =
+            DependencyProperty.Register(nameof(ImageVisiblity), typeof(Visibility),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        #region MessageImage
+
+        private MessageBoxImage messageImage;
+        internal MessageBoxImage MessageImage
+        {
+            get { return messageImage; }
+            set
+            {  
+                messageImage = value;
+
+                DialogBoxIcon = messageImage.ToIcon();
+            }
+        }
+
+        #endregion
+
+        #region Icon 
+
+        private Icon dialogBoxIcon;
+        internal Icon DialogBoxIcon
+        {
+            get { return dialogBoxIcon; }
+            set
+            {
+                dialogBoxIcon = value;
+
+                if (dialogBoxIcon == null)
+                    ImageVisiblity = Visibility.Collapsed;
+                
+                    
+                MessageIcon = dialogBoxIcon.ToImageSource();
+                WindowTitleIcon = dialogBoxIcon.ToImageSource();
+            }
+        }
+
+        #endregion
+
+        #region ImageSource
+
+        private ImageSource MessageIcon
+        {
+            get { return (ImageSource) GetValue(MessageIconProperty); }
+            set { SetValue (MessageIconProperty, value); }
+        }
+
+        private static readonly DependencyProperty MessageIconProperty =
+            DependencyProperty.Register(nameof(MessageIcon), typeof(ImageSource),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        #region TilleIcon 
+
+        private ImageSource WindowTitleIcon
+        {
+            get { return (ImageSource)GetValue (WindowTitleIconProperty); }
+            set { SetValue(WindowTitleIconProperty, value); }
+        }
+
+        private static readonly DependencyProperty WindowTitleIconProperty =
+            DependencyProperty.Register(nameof(WindowTitleIcon), typeof(ImageSource),
+                typeof(DialogBox), null);
+
+        #endregion
 
         #endregion
 
