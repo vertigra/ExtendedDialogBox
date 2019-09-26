@@ -3,41 +3,24 @@ using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
-    public class QueryDialogBox
+    public class BaseDialogBox
     {
-        private readonly DialogBox mDialogBox;
+        internal readonly DialogBox mDialogBox;
 
-        public QueryDialogBox()
+        public BaseDialogBox()
         {
             mDialogBox = new DialogBox();
         }
-        public MessageBoxResult YesNoButton()
-        {
-            mDialogBox.OkButtonVisiblity = Visibility.Visible;
-            mDialogBox.CancelButtonVisiblity = Visibility.Visible;
-            mDialogBox.YesButtonVisiblity = Visibility.Visible;
-            mDialogBox.NoButtonVisiblity = Visibility.Visible;
-            
-            //set as base parametr
-            mDialogBox.MessageImage = MessageBoxImage.Warning;
-
-            mDialogBox.Message = "Warning";
-            mDialogBox.Title = "Warning!";
-
-            mDialogBox.ShowDialog();
-
-            return Result;
-        }
 
         private RelayCommand buttonCommand;
-        public RelayCommand ButtonCommands
+        internal RelayCommand ButtonCommands
         {
             get
             {
                 return buttonCommand ??
                        (buttonCommand = new RelayCommand(obj =>
                        {
-                           string result = (string) obj;
+                           string result = (string)obj;
 
                            switch (result)
                            {
@@ -63,6 +46,6 @@ namespace ExtendedDialogBox.PublicDialogBox
             }
         }
 
-        private MessageBoxResult Result { get; set; }
+        internal MessageBoxResult Result { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace ExtendedDialogBoxApp
         public void ShowQuery()
         {
 
-            QueryDialogBox dialogBox = new QueryDialogBox();
+            QuestionDialogBox dialogBox = new QuestionDialogBox();
 
             MessageBoxResult result = dialogBox.YesNoButton();
 

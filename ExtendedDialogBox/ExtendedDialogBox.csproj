@@ -49,8 +49,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PublicDialogBox\BaseDialogBox.cs" />
     <Compile Include="Utils\Extension.cs" />
-    <Compile Include="PublicDialogBox\QueryDialogBox.cs" />
+    <Compile Include="PublicDialogBox\QuestionDialogBox.cs" />
     <Compile Include="Utils\IconHeleper.cs" />
     <Page Include="DialogBox.xaml">
       <Generator>MSBuild:Compile</Generator>
