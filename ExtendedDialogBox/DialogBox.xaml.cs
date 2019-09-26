@@ -327,12 +327,12 @@ namespace ExtendedDialogBox
 
         internal RelayCommand ButtonCommand
         {
-            get { return (RelayCommand)GetValue(CancelButtonCommandProperty); }
-            set { SetValue(CancelButtonCommandProperty, value); }
+            get { return (RelayCommand)GetValue(ButtonCommandProperty); }
+            set { SetValue(ButtonCommandProperty, value); }
         }
 
 
-        private static readonly DependencyProperty CancelButtonCommandProperty =
+        private static readonly DependencyProperty ButtonCommandProperty =
             DependencyProperty.Register(nameof(ButtonCommand), typeof(RelayCommand),
                 typeof(DialogBox), null);
 
