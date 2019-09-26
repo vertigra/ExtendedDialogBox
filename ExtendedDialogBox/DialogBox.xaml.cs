@@ -1,9 +1,10 @@
 ﻿using ExtendedDialogBox.Command;
+using ExtendedDialogBox.Utils;
 using System;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Media;
-using static IconHeleper;
+using static ExtendedDialogBox.Utils.IconHeleper;
 
 namespace ExtendedDialogBox
 {
@@ -13,7 +14,6 @@ namespace ExtendedDialogBox
         {
             InitializeComponent();
 
-
             InitControls();
         }
 
@@ -21,8 +21,6 @@ namespace ExtendedDialogBox
         {
             if (MessageImage == MessageBoxImage.None)
                 IconHelper.RemoveIcon(this);
-
-            
         }
 
         private void InitControls()
@@ -286,7 +284,6 @@ namespace ExtendedDialogBox
                 if (dialogBoxIcon == null)
                     ImageVisiblity = Visibility.Collapsed;
                 
-                    
                 MessageIcon = dialogBoxIcon.ToImageSource();
                 WindowTitleIcon = dialogBoxIcon.ToImageSource();
             }

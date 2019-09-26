@@ -5,7 +5,7 @@ namespace ExtendedDialogBox.PublicDialogBox
 {
     public class QueryDialogBox
     {
-        private DialogBox mDialogBox;
+        private readonly DialogBox mDialogBox;
 
         public QueryDialogBox()
         {
