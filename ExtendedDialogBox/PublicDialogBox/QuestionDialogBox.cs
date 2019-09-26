@@ -4,14 +4,19 @@ namespace ExtendedDialogBox.PublicDialogBox
 {
     public class QuestionDialogBox : BaseDialogBox
     {
-        public QuestionDialogBox()
-        {
-            //set as base parametr
-            mDialogBox.MessageImage = MessageBoxImage.Question;
+        internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
 
-            mDialogBox.Message = "Question";
-            mDialogBox.Title = "Question?";
+        public QuestionDialogBox(string message)
+        {
+            mDialogBox.Message = message;
         }
+
+        public QuestionDialogBox(string message, string title)
+        {
+            mDialogBox.Message = message;
+            mDialogBox.Title = title;
+        }
+
         public MessageBoxResult YesNoButton()
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;

@@ -6,10 +6,11 @@ namespace ExtendedDialogBox.PublicDialogBox
     public class BaseDialogBox
     {
         internal readonly DialogBox mDialogBox;
+        internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
 
         public BaseDialogBox()
         {
-            mDialogBox = new DialogBox();
+            mDialogBox = new DialogBox(DialogBoxImage);
         }
 
         private RelayCommand buttonCommand;

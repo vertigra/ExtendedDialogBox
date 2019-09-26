@@ -10,11 +10,13 @@ namespace ExtendedDialogBox
 {
     public partial class DialogBox
     {
-        internal DialogBox()
+        internal DialogBox(MessageBoxImage image)
         {
             InitializeComponent();
 
             InitControls();
+
+            MessageImage = image;
         }
 
         protected override void OnSourceInitialized(EventArgs e)
