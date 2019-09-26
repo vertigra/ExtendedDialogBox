@@ -17,6 +17,19 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.Title = title;
         }
 
+        public MessageBoxResult OkButton(string okButtonContent = null)
+        {
+            if (okButtonContent != null)
+                mDialogBox.YesButtonLabel = okButtonContent;
+
+            mDialogBox.OkButtonVisiblity = Visibility.Visible;
+
+            mDialogBox.ShowDialog();
+
+            return Result;
+        }
+
+
         public MessageBoxResult YesNoButton(string yesButtonContent = null, string noButtonContent = null)
         {
             if(yesButtonContent != null)

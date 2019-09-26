@@ -10,7 +10,7 @@ namespace ExtendedDialogBoxApp
 
             QuestionDialogBox dialogBox = new QuestionDialogBox("Вопрос");
 
-            MessageBoxResult result = dialogBox.YesNoButton("Тест", "Не тест");
+            MessageBoxResult result = dialogBox.OkButton("Тест");
 
             if (result == MessageBoxResult.Yes)
                 MessageBox.Show("Uieee");
