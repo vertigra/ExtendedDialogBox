@@ -2,5 +2,5 @@
 
 ### Opportunities:
 
-* Editable button labels
+* Editable button content
 * Dialogue with password and confirmation
