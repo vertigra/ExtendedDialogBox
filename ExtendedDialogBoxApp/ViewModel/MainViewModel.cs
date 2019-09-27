@@ -56,14 +56,22 @@ namespace ExtendedDialogBoxApp.ViewModel
         {
             ResultTextBlock = "";
 
-            string param = "Ok";
-
-            if (obj != null)
-                param = obj as string;
+            string param = obj as string;
 
             DialogButtonType = param;
             DialogType = "Warning";
         });
+
+        public RelayCommand InformationRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "Information";
+        });
+
 
         #endregion
 
@@ -75,6 +83,8 @@ namespace ExtendedDialogBoxApp.ViewModel
             if (DialogType.Equals("Warning"))
                 return new WarningDialogBox("Warning!", "Warning!");
 
+            if (DialogType.Equals("Information"))
+                return new InformationDialogBox("Information", "Information");
 
             return null;
         }
