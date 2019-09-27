@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PublicDialogBox\DialogBox.cs" />
+    <Compile Include="PublicDialogBox\WarningDialogBox.cs" />
     <Compile Include="Utils\Extension.cs" />
     <Compile Include="PublicDialogBox\QuestionDialogBox.cs" />
     <Compile Include="Utils\IconHeleper.cs" />

@@ -70,9 +70,11 @@ namespace ExtendedDialogBoxApp.ViewModel
         private DialogBox GetDialogType()
         {
             if(DialogType.Equals("Question"))
-                return new QuestionDialogBox("Question");
+                return new QuestionDialogBox("Question?", "Question?");
 
-            //todo add warning dialog library
+            if (DialogType.Equals("Warning"))
+                return new WarningDialogBox("Warning!", "Warning!");
+
 
             return null;
         }

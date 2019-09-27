@@ -29,7 +29,9 @@ namespace ExtendedDialogBoxApp
             if (dialogButtonType == "OkYesNoCancel")
                 result = mDialogBox.OkYesNoCancelButton().ToString();
 
-            return result;
+            string resultString = $"Return MessageBoxResult.{result} "; 
+
+            return resultString;
         }
 
     }
