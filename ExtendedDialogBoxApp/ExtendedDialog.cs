@@ -5,15 +5,22 @@ namespace ExtendedDialogBoxApp
 {
     class ExtendedDialog
     {
-        public void ShowQuery()
+        private readonly DialogBox mDialogBox;
+        internal ExtendedDialog(DialogBox DialogBox)
         {
+            mDialogBox = DialogBox;
+        }
 
-            QuestionDialogBox dialogBox = new QuestionDialogBox("Вопрос");
+        internal string ShowDialog(string dialogButtonType)
+        {
+            string result = "No result";
 
-            MessageBoxResult result = dialogBox.OkCancelButton();
+            if (dialogButtonType == "Ok")
+                result = mDialogBox.OkButton().ToString();
 
-            if (result == MessageBoxResult.Yes)
-                MessageBox.Show("Uieee");
+            
+
+            return result;
         }
 
     }

@@ -3,15 +3,17 @@ using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
-    public class BaseDialogBox
+    public class DialogBox
     {
-        internal readonly DialogBox mDialogBox;
+        internal ExtendedDialogBox.DialogBox mDialogBox;
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
 
-        internal BaseDialogBox()
+        internal DialogBox()
         {
-            mDialogBox = new DialogBox(DialogBoxImage);
-            mDialogBox.ButtonCommand = ButtonCommand;
+            mDialogBox = new ExtendedDialogBox.DialogBox(DialogBoxImage)
+            {
+                ButtonCommand = ButtonCommand
+            };
         }
 
         #region Command
@@ -30,30 +32,25 @@ namespace ExtendedDialogBox.PublicDialogBox
                            {
                                case "Cancel":
                                    Result = MessageBoxResult.Cancel;
-                                   mDialogBox.Close();
                                    break;
-                               
                                case "No":
                                    Result = MessageBoxResult.No;
-                                   mDialogBox.Close();
                                    break;
-
                                case "Yes":
                                    Result = MessageBoxResult.Yes;
-                                   mDialogBox.Close();
                                    break;
-
                                case "Ok":
                                    Result = MessageBoxResult.OK;
-                                   mDialogBox.Close();
                                    break;
 
                                default:
-                                   Result = MessageBoxResult.None;
-                                   mDialogBox.Close();
+                                   Result = MessageBoxResult.None;                                   
                                    break;
                            }
+
+                           mDialogBox.Close();
                        }));
+
             }
         }
 

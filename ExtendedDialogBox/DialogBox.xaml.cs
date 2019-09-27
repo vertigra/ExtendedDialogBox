@@ -15,7 +15,6 @@ namespace ExtendedDialogBox
             InitializeComponent();
 
             InitControls();
-
             MessageImage = image;
         }
 
@@ -213,7 +212,7 @@ namespace ExtendedDialogBox
 
         #endregion
 
-        #region DialogBoxTitle
+        #region DialogBox Title
 
         internal string DialogBoxTitle
         {
@@ -227,7 +226,7 @@ namespace ExtendedDialogBox
 
         #endregion
 
-        #region DialogBoxMessage
+        #region DialogBox Message
 
         internal string Message
         {
@@ -337,5 +336,7 @@ namespace ExtendedDialogBox
                 typeof(DialogBox), null);
 
         #endregion
+
+
     }
 }

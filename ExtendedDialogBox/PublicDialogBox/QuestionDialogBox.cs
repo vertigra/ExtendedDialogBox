@@ -2,7 +2,7 @@
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
-    public class QuestionDialogBox : BaseDialogBox
+    public class QuestionDialogBox : DialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
 
@@ -16,8 +16,5 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.Message = message;
             mDialogBox.Title = title;
         }
-
-       
-
     }
 }
