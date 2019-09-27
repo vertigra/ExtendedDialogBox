@@ -19,6 +19,8 @@ namespace ExtendedDialogBoxApp.ViewModel
                 return showDialogBox ??
                        (showDialogBox = new RelayCommand(obj =>
                        {
+                           ResultTextBlock = "";
+
                            var dialogType = GetDialogType();
 
                            if (dialogType == null)
@@ -36,7 +38,7 @@ namespace ExtendedDialogBoxApp.ViewModel
         }
 
         #region Command
-
+        
         public RelayCommand QuestionRadioButtonCommand => new RelayCommand(obj =>
         {
             ResultTextBlock = "";
@@ -50,12 +52,27 @@ namespace ExtendedDialogBoxApp.ViewModel
             DialogType = "Question";
         });
 
+        public RelayCommand WarningRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = "Ok";
+
+            if (obj != null)
+                param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "Warning";
+        });
+
         #endregion
 
         private DialogBox GetDialogType()
         {
             if(DialogType.Equals("Question"))
                 return new QuestionDialogBox("Question");
+
+            //todo add warning dialog library
 
             return null;
         }

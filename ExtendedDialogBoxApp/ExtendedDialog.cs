@@ -1,5 +1,4 @@
 ﻿using ExtendedDialogBox.PublicDialogBox;
-using System.Windows;
 
 namespace ExtendedDialogBoxApp
 {
@@ -18,7 +17,17 @@ namespace ExtendedDialogBoxApp
             if (dialogButtonType == "Ok")
                 result = mDialogBox.OkButton().ToString();
 
-            
+            if (dialogButtonType == "OkCancel")
+                result = mDialogBox.OkCancelButton().ToString();
+
+            if (dialogButtonType == "YesNo")
+                result = mDialogBox.YesNoButton().ToString();
+
+            if (dialogButtonType == "YesNoCancel")
+                result = mDialogBox.YesNoCancelButton().ToString();
+
+            if (dialogButtonType == "OkYesNoCancel")
+                result = mDialogBox.OkYesNoCancelButton().ToString();
 
             return result;
         }

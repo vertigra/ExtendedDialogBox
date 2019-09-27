@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExtendedDialogBoxApp"
         xmlns:localView="clr-namespace:ExtendedDialogBoxApp.ViewModel"
         mc:Ignorable="d"
-        Title="DialogBox Shower" Height="450" Width="800">
+        Title="DialogBox Tester" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,11 +19,10 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
         
-        <GroupBox Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
                 <StackPanel Margin="5">
                 <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
-                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok"
-                             IsChecked="True"/>
+                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" IsChecked="True"/>
                 <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="OkCancel"/>
                     <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
@@ -34,7 +33,23 @@
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="OkYesNoCancel"/>
                 </StackPanel>
             </GroupBox>
-        
+
+        <GroupBox Grid.Row="0" Grid.Column="1" Header="Warning DialogBox" VerticalAlignment="Top" Margin="5">
+            <StackPanel Margin="5">
+                <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding WarningRadioButtonCommand}" CommandParameter="Ok" IsChecked="True"/>
+                <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding WarningRadioButtonCommand}" CommandParameter="OkCancel"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding WarningRadioButtonCommand}" CommandParameter="YesNo"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding WarningRadioButtonCommand}" CommandParameter="YesNoCancel"/>
+                <RadioButton Width="150" Height="Auto" Content="OkYesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding WarningRadioButtonCommand}" CommandParameter="OkYesNoCancel"/>
+            </StackPanel>
+        </GroupBox>
+
+
         <Button Grid.Row="1" Grid.Column="0" Content="Show Dialog" Width="100" Height="25" Command="{Binding ShowDialogBox}"/>
         <CheckBox Grid.Row="1" Grid.Column="1" Content="ShowResult" VerticalAlignment="Center" HorizontalAlignment="Left" 
                   IsChecked="{Binding IsResultShow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
