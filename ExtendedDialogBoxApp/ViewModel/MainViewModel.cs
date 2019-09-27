@@ -72,6 +72,15 @@ namespace ExtendedDialogBoxApp.ViewModel
             DialogType = "Information";
         });
 
+        public RelayCommand ErrorRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "Error";
+        });
 
         #endregion
 
@@ -85,6 +94,9 @@ namespace ExtendedDialogBoxApp.ViewModel
 
             if (DialogType.Equals("Information"))
                 return new InformationDialogBox("Information", "Information");
+
+            if (DialogType.Equals("Error"))
+                return new ErrorDialogBox("Error", "Error");
 
             return null;
         }

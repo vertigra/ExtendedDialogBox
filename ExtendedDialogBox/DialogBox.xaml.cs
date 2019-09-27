@@ -72,7 +72,6 @@ namespace ExtendedDialogBox
             DependencyProperty.Register(nameof(NoButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
 
-
         #endregion
 
         #region YesButton Visiblity

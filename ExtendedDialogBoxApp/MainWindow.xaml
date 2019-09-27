@@ -64,6 +64,20 @@
             </StackPanel>
         </GroupBox>
 
+        <GroupBox Grid.Row="0" Grid.Column="3" Header="Error DialogBox" VerticalAlignment="Top" Margin="5">
+            <StackPanel Margin="5">
+                <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding ErrorRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding ErrorRadioButtonCommand}" CommandParameter="OkCancel" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding ErrorRadioButtonCommand}" CommandParameter="YesNo" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding ErrorRadioButtonCommand}" CommandParameter="YesNoCancel" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="OkYesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding ErrorRadioButtonCommand}" CommandParameter="OkYesNoCancel" GroupName="radioButton"/>
+            </StackPanel>
+        </GroupBox>
 
         <Button Grid.Row="1" Grid.Column="0" Content="Show Dialog" Width="100" Height="25" Command="{Binding ShowDialogBox}"/>
         <CheckBox Grid.Row="1" Grid.Column="1" Content="ShowResult" VerticalAlignment="Center" HorizontalAlignment="Left" 
