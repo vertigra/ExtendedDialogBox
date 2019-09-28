@@ -49,7 +49,7 @@
             Background="White" 
             MinHeight="0" 
             Name="PasswordGrid"
-            Visibility="{Binding PasswordBoxesVisiblity, ElementName=dialogBox}" d:IsHidden="True">
+            Visibility="{Binding PasswordBoxesGridVisiblity, ElementName=dialogBox}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -61,33 +61,35 @@
 
             <Label Grid.Column="0"
                    Grid.Row="0"
-                   Content="{Binding PasswordLabel, ElementName=dialogBox}" Margin="10 10 10 15"  
-                   VerticalAlignment="Center" d:IsHidden="True"/>
+                   Content="{Binding PasswordLabel, ElementName=dialogBox}" Margin="10 0 10 10"  
+                   VerticalAlignment="Center"/>
 
             <PasswordBox Grid.Row="0"
                          Grid.Column="1"
                          Name="PasswordInputBox"
-                         MinWidth="150"
+                         MinWidth="200"
                          MaxWidth="500"
                          Width="Auto"
                          VerticalAlignment="Center"
-                         Margin="10,10,10,15"
-                         TextBlock.TextAlignment="Right" d:IsHidden="True"/>
+                         Margin="10 0 10 10"
+                         TextBlock.TextAlignment="Right"/>
 
             <Label Grid.Column="0"
                    Grid.Row="1"
-                   Content="{Binding PasswordConfirmationLabel, ElementName=dialogBox}" Margin="10 0 10 15"  
-                   VerticalAlignment="Center" d:IsHidden="True"/>
+                   Content="{Binding PasswordConfirmationLabel, ElementName=dialogBox}" Margin="10 0 10 10"
+                   Visibility="{Binding PasswordConfirmationInputBoxVisiblitiy, ElementName=dialogBox}"
+                   VerticalAlignment="Center"/>
 
             <PasswordBox Grid.Row="1"
                          Grid.Column="1"
-                         Name="PasswordConfirmation"
-                         MinWidth="150"
+                         Name="PasswordConfirmationInputBox"
+                         MinWidth="200"
                          MaxWidth="500"
                          Width="Auto"
                          VerticalAlignment="Center"
-                         Margin="10,0,10,15" 
-                         TextBlock.TextAlignment="Right" d:IsHidden="True"/>
+                         Margin="10 0 10 10"
+                         Visibility="{Binding PasswordConfirmationInputBoxVisiblitiy, ElementName=dialogBox}"
+                         TextBlock.TextAlignment="Right"/>
 
         </Grid>
 
