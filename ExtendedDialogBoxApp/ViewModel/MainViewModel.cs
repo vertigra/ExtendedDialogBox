@@ -92,6 +92,16 @@ namespace ExtendedDialogBoxApp.ViewModel
             DialogType = "Password";
         });
 
+        public RelayCommand PasswordConfirmRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "PasswordConfirm";
+        });
+
         #endregion
 
         private DialogBox GetDialogType()
@@ -110,6 +120,9 @@ namespace ExtendedDialogBoxApp.ViewModel
 
             if (DialogType.Equals("Password"))
                 return new PasswordDialogBox("Eneter password", "Password");
+
+            if (DialogType.Equals("PasswordConfirm"))
+                return new PasswordCofirmDialogBox("Eneter password", "Password");
 
             return null;
         }

@@ -22,9 +22,9 @@
         
         <GroupBox Grid.Row="0" Grid.Column="0" Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
                 <StackPanel Margin="5">
-                <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
-                             Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" IsChecked="True" GroupName="radioButton"/>
-                <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
+                    <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" IsChecked="True" GroupName="radioButton"/>
+                    <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="OkCancel" GroupName="radioButton"/>
                     <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="YesNo" GroupName="radioButton"/>
@@ -92,6 +92,21 @@
                                  Command="{Binding PasswordRadioButtonCommand}" CommandParameter="YesNoCancel" GroupName="radioButton"/>
                 <RadioButton Width="150" Height="Auto" Content="OkYesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding PasswordRadioButtonCommand}" CommandParameter="OkYesNoCancel" GroupName="radioButton"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="PasswordConfirm DialogBox" VerticalAlignment="Top" Margin="5">
+            <StackPanel Margin="5">
+                <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding PasswordConfirmRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding PasswordConfirmRadioButtonCommand}" CommandParameter="OkCancel" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding PasswordConfirmRadioButtonCommand}" CommandParameter="YesNo" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding PasswordConfirmRadioButtonCommand}" CommandParameter="YesNoCancel" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="OkYesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding PasswordConfirmRadioButtonCommand}" CommandParameter="OkYesNoCancel" GroupName="radioButton"/>
             </StackPanel>
         </GroupBox>
 

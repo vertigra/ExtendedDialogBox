@@ -2,19 +2,19 @@
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
-    public class PasswordDialogBox : DialogBox
+    public class PasswordCofirmDialogBox : DialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
-        internal override bool IsPasswordBox => true;
+        internal override bool IsPasswordWithConfirm => true;
 
-        public PasswordDialogBox(string message)
+        public PasswordCofirmDialogBox(string message)
         {
             mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
 
             mDialogBox.Message = message;
         }
 
-        public PasswordDialogBox(string message, string title)
+        public PasswordCofirmDialogBox(string message, string title)
         {
             mDialogBox.Message = message;
             mDialogBox.Title = title;
