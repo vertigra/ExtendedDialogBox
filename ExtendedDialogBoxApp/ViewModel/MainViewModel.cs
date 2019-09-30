@@ -72,6 +72,35 @@ namespace ExtendedDialogBoxApp.ViewModel
             DialogType = "Information";
         });
 
+        public RelayCommand ErrorRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "Error";
+        });
+
+        public RelayCommand PasswordRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "Password";
+        });
+
+        public RelayCommand PasswordConfirmRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "PasswordConfirm";
+        });
 
         #endregion
 
@@ -85,6 +114,15 @@ namespace ExtendedDialogBoxApp.ViewModel
 
             if (DialogType.Equals("Information"))
                 return new InformationDialogBox("Information", "Information");
+
+            if (DialogType.Equals("Error"))
+                return new ErrorDialogBox("Error", "Error");
+
+            if (DialogType.Equals("Password"))
+                return new PasswordDialogBox("Eneter password", "Password");
+
+            if (DialogType.Equals("PasswordConfirm"))
+                return new PasswordCofirmDialogBox("Eneter password", "Password");
 
             return null;
         }

@@ -26,11 +26,11 @@ namespace ExtendedDialogBox.Utils
 
             switch (boxImage)
             {
-                case MessageBoxImage.Exclamation:
-                    icon = SystemIcons.Exclamation;
+                case MessageBoxImage.Exclamation | MessageBoxImage.Warning:
+                    icon = SystemIcons.Warning;
                     break;
                 case MessageBoxImage.Error | MessageBoxImage.Stop | MessageBoxImage.Hand:
-                    icon = SystemIcons.Error;
+                    icon = SystemIcons.Hand;
                     break;
                 case MessageBoxImage.Information | MessageBoxImage.Asterisk:
                     icon = SystemIcons.Information;

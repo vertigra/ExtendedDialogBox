@@ -2,7 +2,7 @@
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
-    class ErrorDialogBox : DialogBox
+    public class ErrorDialogBox : DialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Error;
 

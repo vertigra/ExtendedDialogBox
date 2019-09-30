@@ -7,6 +7,8 @@ namespace ExtendedDialogBox.PublicDialogBox
     {
         internal ExtendedDialogBox.DialogBox mDialogBox;
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
+        internal virtual bool IsPasswordBox { get => false; }
+        internal virtual bool IsPasswordWithConfirm { get => false; }
 
         internal DialogBox()
         {
@@ -14,6 +16,15 @@ namespace ExtendedDialogBox.PublicDialogBox
             {
                 ButtonCommand = ButtonCommand
             };
+
+            if (IsPasswordBox)
+            {
+                mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
+                mDialogBox.PasswordConfirmationInputBoxVisiblitiy = Visibility.Collapsed;
+            }
+
+            if (IsPasswordWithConfirm)
+                mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
         }
 
         #region Command
@@ -58,7 +69,8 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #endregion
 
-        
+        #region OkButton
+
         public MessageBoxResult OkButton(string okButtonContent = null)
         {
             if (okButtonContent != null)
@@ -70,6 +82,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
             return Result;
         }
+
+        #endregion
+
+        #region OkCancelButton
 
         public MessageBoxResult OkCancelButton(string okButtonContent = null, string cancelButtonContent = null)
         {
@@ -87,6 +103,10 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        #endregion
+
+        #region YesNoButton
+
         public MessageBoxResult YesNoButton(string yesButtonContent = null, string noButtonContent = null)
         {
             if (yesButtonContent != null)
@@ -103,6 +123,10 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        #endregion
+
+        #region YesCancelButton
+
         public MessageBoxResult YesCancelButton(string yesButtonContent = null, string cancelButtonContent = null)
         {
             if (yesButtonContent != null)
@@ -118,6 +142,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
             return Result;
         }
+
+        #endregion
+
+        #region YesNoCancelButton
 
         public MessageBoxResult YesNoCancelButton(string yesButtonContent = null,
             string noButtonContent = null, string cancelButtonContent = null)
@@ -139,6 +167,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
             return Result;
         }
+
+        #endregion
+
+        #region OkYesNoCancelButton
 
         public MessageBoxResult OkYesNoCancelButton(string okButtonContent = null, 
             string yesButtonContent = null, string noButtonContent = null, 
@@ -166,5 +198,9 @@ namespace ExtendedDialogBox.PublicDialogBox
 
             return Result;
         }
+
+        #endregion
     }
+
+
 }

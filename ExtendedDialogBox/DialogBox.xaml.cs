@@ -32,7 +32,7 @@ namespace ExtendedDialogBox
             NoButtonVisiblity = Visibility.Collapsed;
             YesButtonVisiblity = Visibility.Collapsed;
             OkButtonVisiblity = Visibility.Collapsed;
-            PasswordBoxesVisiblity = Visibility.Collapsed;
+            PasswordBoxesGridVisiblity = Visibility.Collapsed;
 
             //default content for label
             CancelButtonLabel = "Cancel";
@@ -41,8 +41,8 @@ namespace ExtendedDialogBox
             OkButtonLabel = "OK";
 
             //default contetnt for password box label
-            PasswordLabel = "Пароль";
-            PasswordConfirmationLabel = "Подтверждение";
+            PasswordLabel = "Password";
+            PasswordConfirmationLabel = "Confirm";
         }
 
         #region Button Visiblity
@@ -72,7 +72,6 @@ namespace ExtendedDialogBox
         private static readonly DependencyProperty NoButtonVisiblityProperty =
             DependencyProperty.Register(nameof(NoButtonVisiblity), typeof(Visibility),
                 typeof(DialogBox), null);
-
 
         #endregion
 
@@ -169,21 +168,38 @@ namespace ExtendedDialogBox
 
         #region PasswordBoxes Visiblity
 
-        internal Visibility PasswordBoxesVisiblity
+        #region PasswordBoxesGridVisiblity
+
+        internal Visibility PasswordBoxesGridVisiblity
         {
-            get { return (Visibility)GetValue(PasswordBoxesProperty); }
-            set { SetValue(PasswordBoxesProperty, value); }
+            get { return (Visibility)GetValue(PasswordBoxesGridProperty); }
+            set { SetValue(PasswordBoxesGridProperty, value); }
         }
 
-        private static readonly DependencyProperty PasswordBoxesProperty =
-            DependencyProperty.Register(nameof(PasswordBoxesVisiblity), typeof(Visibility),
+        private static readonly DependencyProperty PasswordBoxesGridProperty =
+            DependencyProperty.Register(nameof(PasswordBoxesGridVisiblity), typeof(Visibility),
+                typeof(DialogBox), null);
+
+        #endregion
+
+        /// <summary>
+        /// Visiblity input box with password and label
+        /// </summary>
+        internal Visibility PasswordConfirmationInputBoxVisiblitiy
+        {
+            get { return (Visibility)GetValue(PasswordConfirmationInputBoxProperty); }
+            set { SetValue(PasswordConfirmationInputBoxProperty, value); }
+        }
+
+        private static readonly DependencyProperty PasswordConfirmationInputBoxProperty =
+            DependencyProperty.Register(nameof(PasswordConfirmationInputBoxVisiblitiy), typeof(Visibility),
                 typeof(DialogBox), null);
 
         #endregion
 
         #region PasswordBox Label
 
-        # region Password Label
+        #region Password Label
 
         internal string PasswordLabel
         {
