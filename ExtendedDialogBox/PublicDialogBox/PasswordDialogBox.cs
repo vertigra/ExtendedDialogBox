@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Security;
+using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
@@ -7,10 +8,12 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
         internal override bool IsPasswordBox => true;
 
+        public SecureString Password { get => mDialogBox.Password; } 
+        public string PasswordString { get => mDialogBox.PasswordString; }
+
         public PasswordDialogBox(string message)
         {
             mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
-
             mDialogBox.Message = message;
         }
 

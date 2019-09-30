@@ -1,4 +1,5 @@
 ﻿using ExtendedDialogBox.PublicDialogBox;
+using ExtendedDialogBoxApp.Utils;
 using ExtendedDialogBoxAppCommand;
 using System;
 using System.ComponentModel;
@@ -32,9 +33,28 @@ namespace ExtendedDialogBoxApp.ViewModel
                            if (result == null) throw new Exception("No result exception");
 
                            if(IsResultShow)
-                                ResultTextBlock = result;
+                               ResultsTextBlockAdd("ButtonResult returns", result);
+
+                           PasswordDialogBox passwordDialog = dialogType as PasswordDialogBox;
+
+                           if (passwordDialog != null)
+                           {
+                                ResultsTextBlockAdd("PasswordString returns",
+                                passwordDialog.PasswordString);
+                                ResultsTextBlockAdd("Password.ToUnsecureString() returns",
+                                passwordDialog.Password.ToUnsecureString());
+                           }
+
                        }));
             }
+        }
+
+        private void ResultsTextBlockAdd(string title, string message)
+        {
+            if (ResultTextBlock.Length == 0)
+                ResultTextBlock = $"{title}: {message}";
+            else
+                ResultTextBlock += $"\n{title}: {message}";
         }
 
         #region Command

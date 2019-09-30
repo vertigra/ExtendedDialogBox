@@ -327,27 +327,22 @@ namespace ExtendedDialogBox
 
         #region InputBox Password and PasswordConfirm
 
-        internal SecureString Password
+        internal SecureString Password => PasswordInputBox.SecurePassword;
+        internal string PasswordString => PasswordInputBox.Password;
+
+        internal SecureString PasswordConfirmation => PasswordConfirmationInputBox.SecurePassword;
+        internal string PasswordConfirmationString => PasswordConfirmationInputBox.Password;
+
+        internal void ClearPasswordBox()
         {
-            get { return (SecureString)GetValue(PasswordProperty); }
-            set { SetValue(PasswordProperty, value); }
+            PasswordInputBox.Clear();
         }
 
-        private static readonly DependencyProperty PasswordProperty =
-            DependencyProperty.Register(nameof(Password), typeof(SecureString),
-                typeof(DialogBox), null);
-
-
-
-        internal SecureString PasswordConfirmation
+        internal void ClearPasswordConfirmationBox()
         {
-            get { return (SecureString)GetValue(PasswordConfirmationProperty); }
-            set { SetValue(PasswordConfirmationProperty, value); }
+            PasswordConfirmationInputBox.Clear();
         }
 
-        private static readonly DependencyProperty PasswordConfirmationProperty =
-            DependencyProperty.Register(nameof(PasswordConfirmation), typeof(SecureString),
-                typeof(DialogBox), null);
 
         #endregion
 
