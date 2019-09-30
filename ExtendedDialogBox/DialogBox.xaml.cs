@@ -229,20 +229,6 @@ namespace ExtendedDialogBox
 
         #endregion
 
-        #region DialogBox Title
-
-        internal string DialogBoxTitle
-        {
-            get { return (string)GetValue(DialogBoxTitleProperty); }
-            set { SetValue(DialogBoxTitleProperty, value); }
-        }
-
-        private static readonly DependencyProperty DialogBoxTitleProperty =
-            DependencyProperty.Register(nameof(DialogBoxTitle), typeof(string),
-                typeof(DialogBox), null);
-
-        #endregion
-
         #region DialogBox Message
 
         internal string Message

@@ -14,8 +14,7 @@
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType" 
         UseLayoutRounding="True"
-        Icon="{Binding WindowTitleIcon, ElementName=dialogBox}"
-        Title="{Binding DialogBoxTitle, ElementName=dialogBox}" 
+        Icon="{Binding WindowTitleIcon, ElementName=dialogBox}"       
         MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
