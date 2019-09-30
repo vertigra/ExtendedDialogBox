@@ -168,7 +168,8 @@ namespace ExtendedDialogBoxApp.ViewModel
             get { return resultTextBlock; }
             set
             {
-                if (value.Equals(resultTextBlock)) return;
+                if (value.Equals(resultTextBlock))
+                    return;
 
                 resultTextBlock = value;
                 OnPropertyChanged(nameof(ResultTextBlock));
@@ -181,9 +182,10 @@ namespace ExtendedDialogBoxApp.ViewModel
             get { return isResultShow; }
             set
             {
-                if (value == isResultShow) return;
-                isResultShow = value;
+                if (value == isResultShow)
+                    return;
 
+                isResultShow = value;
                 OnPropertyChanged(nameof(IsResultShow));
             }
         }

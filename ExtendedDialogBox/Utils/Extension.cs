@@ -10,7 +10,8 @@ namespace ExtendedDialogBox.Utils
     {
         internal static ImageSource ToImageSource(this Icon icon)
         {
-            if (icon == null) return null;
+            if (icon == null)
+                return null;
 
             ImageSource imageSource = Imaging.CreateBitmapSourceFromHIcon(
                 icon.Handle,
