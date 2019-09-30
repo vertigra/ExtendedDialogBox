@@ -1,4 +1,4 @@
-<img src="https://img.icons8.com/dusk/64/000000/mailbox-opened-flag-down.png" alt="logo" title="ExtendedDialogBox" align="right" height="50">
+<img src="https://img.icons8.com/dusk/100/000000/mailbox-opened-flag-down.png" alt="logo" title="ExtendedDialogBox" align="right" height="55">
 
 # Extended DialogBox
 
