@@ -1,6 +1,6 @@
 <img src="https://img.icons8.com/dusk/100/000000/mailbox-opened-flag-down.png" alt="logo" title="ExtendedDialogBox" align="right" height="60">
 
-# Extended DialogBox
+# Extended DialogBox [![BCH compliance](https://bettercodehub.com/edge/badge/vertigra/ExtendedDialogBox?branch=master)](https://bettercodehub.com/)
 
 ### Opportunities:
 
