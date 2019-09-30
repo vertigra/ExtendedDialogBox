@@ -328,11 +328,8 @@ namespace ExtendedDialogBox
         #region InputBox Password and PasswordConfirm
 
         internal SecureString Password => PasswordInputBox.SecurePassword;
-        internal string PasswordString => PasswordInputBox.Password;
-
         internal SecureString PasswordConfirmation => PasswordConfirmationInputBox.SecurePassword;
-        internal string PasswordConfirmationString => PasswordConfirmationInputBox.Password;
-
+        
         internal void ClearPasswordBox()
         {
             PasswordInputBox.Clear();

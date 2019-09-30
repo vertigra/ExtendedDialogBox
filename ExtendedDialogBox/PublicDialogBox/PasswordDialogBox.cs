@@ -9,11 +9,9 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal override bool IsPasswordBox => true;
 
         public SecureString Password { get => mDialogBox.Password; } 
-        public string PasswordString { get => mDialogBox.PasswordString; }
 
         public PasswordDialogBox(string message)
         {
-            mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
             mDialogBox.Message = message;
         }
 

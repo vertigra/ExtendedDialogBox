@@ -35,19 +35,26 @@ namespace ExtendedDialogBoxApp.ViewModel
                            if(IsResultShow)
                                ResultsTextBlockAdd("ButtonResult returns", result);
 
-                           PasswordDialogBox passwordDialog = dialogType as PasswordDialogBox;
-
-                           if (passwordDialog != null)
+                           if (dialogType is PasswordDialogBox passwordDialog)
                            {
-                                ResultsTextBlockAdd("PasswordString returns",
-                                passwordDialog.PasswordString);
-                                ResultsTextBlockAdd("Password.ToUnsecureString() returns",
-                                passwordDialog.Password.ToUnsecureString());
+                               ResultsTextBlockAdd("Password.ToUnsecureString() returns",
+                               passwordDialog.Password.ToUnsecureString());
+                           }
+
+                           if (dialogType is PasswordCofirmDialogBox passwordCofirmDialog)
+                           {
+                               ResultsTextBlockAdd("Password.ToUnsecureString() returns",
+                                   passwordCofirmDialog.Password.ToUnsecureString());
+
+                               ResultsTextBlockAdd("PasswordConfirmation.ToUnsecureString() returns",
+                                   passwordCofirmDialog.PasswordConfirmation.ToUnsecureString());
                            }
 
                        }));
             }
         }
+
+        #region TextUtils
 
         private void ResultsTextBlockAdd(string title, string message)
         {
@@ -57,8 +64,10 @@ namespace ExtendedDialogBoxApp.ViewModel
                 ResultTextBlock += $"\n{title}: {message}";
         }
 
+        #endregion
+
         #region Command
-        
+
         public RelayCommand QuestionRadioButtonCommand => new RelayCommand(obj =>
         {
             ResultTextBlock = "";
@@ -124,6 +133,8 @@ namespace ExtendedDialogBoxApp.ViewModel
 
         #endregion
 
+        #region SelectDialogType
+
         private DialogBox GetDialogType()
         {
             if(DialogType.Equals("Question"))
@@ -146,6 +157,8 @@ namespace ExtendedDialogBoxApp.ViewModel
 
             return null;
         }
+
+        #endregion
 
         #region Binding
 

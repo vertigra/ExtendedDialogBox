@@ -4,8 +4,21 @@ using System.Security;
 
 namespace ExtendedDialogBoxApp.Utils
 {
+    /// <summary>
+    /// Set of extensions for working with SecureString
+    /// 
+    /// <see cref="https://github.com/dotnet/platform-compat/blob/master/docs/DE0001.md"> DE0001: SecureString shouldn't be used </see>
+    /// Use in production may be unsafe
+    /// </summary>
     public static class Extension
     {
+        /// <summary>
+        /// Convert SecureString to string
+        /// 
+        /// Author <see cref="https://blogs.msdn.microsoft.com/fpintos/2009/06/12/how-to-properly-convert-securestring-to-string/"> How to properly convert SecureString to String </see>
+        /// </summary>
+        /// <param name="securePassword">SecureString source</param>
+        /// <returns>String converted from SecureString</returns>
         public static string ToUnsecureString(this SecureString securePassword)
         {
             if (securePassword == null)
@@ -25,6 +38,13 @@ namespace ExtendedDialogBoxApp.Utils
             }
         }
 
+        /// <summary>
+        /// Convert string to SecureString
+        ///
+        /// Author <see cref="https://blogs.msdn.microsoft.com/fpintos/2009/06/12/how-to-properly-convert-securestring-to-string/"> How to properly convert SecureString to String </see>
+        /// </summary>
+        /// <param name="password">String source</param>
+        /// <returns>SecureString converted from String</returns>
         public static SecureString ToSecureString(this string password)
         {
             if (password == null)
@@ -42,6 +62,16 @@ namespace ExtendedDialogBoxApp.Utils
             return secureString;
         }
 
+        /// <summary>
+        /// Equals two secure string.
+        /// 
+        /// Use in production may be unsafe
+        /// Author <see cref="https://stackoverflow.com/questions/4502676/c-sharp-compare-two-securestrings-for-equality/4502736#4502736"/>
+        /// </summary>
+        /// 
+        /// <param name="secureString1">SecureString source</param>
+        /// <param name="secureString2">SecureString compared</param>
+        /// <returns>True if equals, false otherwise</returns>
         public static bool SecureEqual(this SecureString secureString1, SecureString secureString2)
         {
             if (secureString1 == null)
