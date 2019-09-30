@@ -2,6 +2,7 @@
 using ExtendedDialogBox.Utils;
 using System;
 using System.Drawing;
+using System.Security;
 using System.Windows;
 using System.Windows.Media;
 using static ExtendedDialogBox.Utils.IconHeleper;
@@ -319,6 +320,32 @@ namespace ExtendedDialogBox
                 typeof(DialogBox), null);
 
         #endregion
+
+        #endregion
+
+        #region InputBox Password and PasswordConfirm
+
+        internal SecureString Password
+        {
+            get { return (SecureString)GetValue(PasswordProperty); }
+            set { SetValue(PasswordProperty, value); }
+        }
+
+        private static readonly DependencyProperty PasswordProperty =
+            DependencyProperty.Register(nameof(Password), typeof(SecureString),
+                typeof(DialogBox), null);
+
+
+
+        internal SecureString PasswordConfirmation
+        {
+            get { return (SecureString)GetValue(PasswordConfirmationProperty); }
+            set { SetValue(PasswordConfirmationProperty, value); }
+        }
+
+        private static readonly DependencyProperty PasswordConfirmationProperty =
+            DependencyProperty.Register(nameof(PasswordConfirmation), typeof(SecureString),
+                typeof(DialogBox), null);
 
         #endregion
 

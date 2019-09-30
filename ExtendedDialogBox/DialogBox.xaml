@@ -73,7 +73,8 @@
                          Width="Auto"
                          VerticalAlignment="Center"
                          Margin="10,10,10,15"
-                         TextBlock.TextAlignment="Right"/>
+                         TextBlock.TextAlignment="Right"
+                         Password="{Binding Password, ElementName=dialogBox}"/>
 
             <Label Grid.Column="0"
                    Grid.Row="1"
@@ -82,7 +83,8 @@
 
             <PasswordBox Grid.Row="1"
                          Grid.Column="1"
-                         Name="PasswordConfirmation"
+                         Name="PasswordConfirmationInputBox"
+                         Password="{Binding PasswordConfirmation, ElementName=dialogBox}"
                          MinWidth="150"
                          MaxWidth="500"
                          Width="Auto"
