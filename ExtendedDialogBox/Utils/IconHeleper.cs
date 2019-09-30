@@ -1,17 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 
 namespace ExtendedDialogBox.Utils
 {
-    class IconHeleper
+    /// <summary>
+    /// Remove icons from dialog box.
+    /// 
+    /// Author <see cref="https://www.wpftutorial.net/RemoveIcon.html">How to remove the icon of a WPF window</see>
+    /// </summary>
+    internal class IconHeleper
     {
-        internal static class IconHelper
+        internal protected static class IconHelper
         {
             [DllImport("user32.dll")]
             static extern int GetWindowLong(IntPtr hwnd, int index);
@@ -33,7 +34,6 @@ namespace ExtendedDialogBox.Utils
             const int SWP_NOMOVE = 0x0002;
             const int SWP_NOZORDER = 0x0004;
             const int SWP_FRAMECHANGED = 0x0020;
-            //nst uint WM_SETICON = 0x0080;
 
             public static void RemoveIcon(Window window)
             {
@@ -48,7 +48,6 @@ namespace ExtendedDialogBox.Utils
                 SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE |
                       SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
             }
-
         }
     }
 }
