@@ -5,8 +5,6 @@
 
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/ExtendedDialogBox) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/vertigra/ExtendedDialogBox?color=yellow&include_prereleases) ![GitHub watchers](https://img.shields.io/github/watchers/vertigra/ExtendedDialogBox?label=Watch) ![Nuget](https://img.shields.io/nuget/dt/ExtendedDialogBox?label=nuget%20downloads) ![GitHub Pre-Releases](https://img.shields.io/github/downloads-pre/vertigra/ExtendedDialogBox/latest/total?label=github%20dowloads)
 
-## Opportunities:
-
 Five typical dialog boxes:
 * Error DialogBox
 * Information DialogBox
