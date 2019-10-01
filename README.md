@@ -17,7 +17,8 @@ The sets of buttons that are available in each type of dialog box:
 * YesNoButton
 * YesCancelButton
 * YesNoCancelButton
-* OkYesNoCancelButton
+* OkYesNoCancelButton   
+
 For any set of buttons you can edit labels.
 
 Any type of dialog box returns a standard .Net MessageBoxResult enumeration as the result.
