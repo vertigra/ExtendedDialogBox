@@ -9,7 +9,7 @@ using static ExtendedDialogBox.Utils.IconHeleper;
 
 namespace ExtendedDialogBox
 {
-    public partial class DialogBox
+    public sealed class DialogBox : DialogBoxWindow
     {
         internal DialogBox(MessageBoxImage image)
         {
