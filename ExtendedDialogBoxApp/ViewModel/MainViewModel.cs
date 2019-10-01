@@ -4,6 +4,7 @@ using ExtendedDialogBoxAppCommand;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace ExtendedDialogBoxApp.ViewModel
 {
@@ -25,12 +26,13 @@ namespace ExtendedDialogBoxApp.ViewModel
                            var dialogType = GetDialogType();
 
                            if (dialogType == null)
-                               throw new Exception("Not defined dialog type");
+                               MessageBox.Show("Not defined dialog type");
 
                            ExtendedDialog dialog = new ExtendedDialog(dialogType);
                            var result = dialog.ShowDialog(DialogButtonType);
 
-                           if (result == null) throw new Exception("No result exception");
+                           if (result == null)
+                               MessageBox.Show("No result exception");
 
                            if(IsResultShow)
                                ResultsTextBlockAdd("ButtonResult returns", result);
