@@ -26,7 +26,11 @@ Any type of dialog box returns a standard .Net MessageBoxResult enumeration as t
 The Password and PasswordConfirmation dialogs return the entered password to SecureString through the class field.
 
 ## Getting Started
-Soon ...
+
+### Nuget install
+PM> Install-Package ExtendedDialogBox -Version 0.0.0.1-beta
+
+Coming soon ...
 
 # Demo
 ![Typical dialog boxes](ExtendedDialogBoxApp/Demo/demo-diallog-box-0.0.0.1.gif)
