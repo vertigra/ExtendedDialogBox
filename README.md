@@ -5,7 +5,7 @@
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/vertigra/ExtendedDialogBox) ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/vertigra/ExtendedDialogBox) ![GitHub watchers](https://img.shields.io/github/watchers/vertigra/ExtendedDialogBox?label=Watch) ![Nuget](https://img.shields.io/nuget/dt/ExtendedDialogBox?label=nuget%20downloads) ![GitHub Pre-Releases](https://img.shields.io/github/downloads-pre/vertigra/ExtendedDialogBox/latest/total?label=github%20dowloads)
 
-### Opportunities:
+## Opportunities:
 
 Five typical dialog boxes:
 * Error DialogBox
@@ -29,6 +29,11 @@ Any type of dialog box returns a standard .Net MessageBoxResult enumeration as t
 
 The Password and PasswordConfirmation dialogs return the entered password to SecureString through the class field.
 
-### Thanks
+## Getting Started
+Soon ...
+
+
+
+## Thanks
 
 <a href="https://icons8.com/icon/55041/post-box">Post Box icon by Icons8</a>
