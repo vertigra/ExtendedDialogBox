@@ -152,10 +152,10 @@ namespace ExtendedDialogBoxApp.ViewModel
                 return new ErrorDialogBox("Error", "Error");
 
             if (DialogType.Equals("Password"))
-                return new PasswordDialogBox("Eneter password", "Password");
+                return new PasswordDialogBox("Enter password", "Password");
 
             if (DialogType.Equals("PasswordConfirm"))
-                return new PasswordCofirmDialogBox("Eneter password", "Password");
+                return new PasswordCofirmDialogBox("Enter password", "Password");
 
             return null;
         }
