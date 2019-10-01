@@ -10,9 +10,9 @@ namespace ExtendedDialogBox.Utils
     /// 
     /// Author <see cref="https://www.wpftutorial.net/RemoveIcon.html">How to remove the icon of a WPF window</see>
     /// </summary>
-    internal class IconHeleper
+    class IconHeleper
     {
-        protected static class IconHelper
+        internal static class IconHelper
         {
             [DllImport("user32.dll")]
             static extern int GetWindowLong(IntPtr hwnd, int index);
