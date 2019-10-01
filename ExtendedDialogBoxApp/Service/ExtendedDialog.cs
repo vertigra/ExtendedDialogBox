@@ -2,6 +2,9 @@
 
 namespace ExtendedDialogBoxApp
 {
+    /// <summary>
+    /// Show dialog window and return dialog result as string
+    /// </summary>
     class ExtendedDialog
     {
         private readonly DialogBox mDialogBox;
