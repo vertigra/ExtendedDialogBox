@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExtendedDialogBoxApp"
-        xmlns:localView="clr-namespace:ExtendedDialogBoxApp.ViewModel"
         mc:Ignorable="d"
-        Title="DialogBox Tester" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="DialogBox Tester" Height="550" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -17,7 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="200" />
         </Grid.RowDefinitions>
         
         <GroupBox Grid.Row="0" Grid.Column="0" Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
@@ -110,9 +109,40 @@
             </StackPanel>
         </GroupBox>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="Show Dialog" Width="100" Height="25" Command="{Binding ShowDialogBox}"/>
-        <CheckBox Grid.Row="2" Grid.Column="1" Content="ShowResult" VerticalAlignment="Center" HorizontalAlignment="Left" 
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Row="0" Grid.Column="0" Header="OkButton Content" Margin="5">
+                <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}" />
+            </GroupBox>
+
+            <GroupBox Grid.Row="0" Grid.Column="1" Header="CancelButton Content" Margin="5">
+                <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}"/>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="YesButton Content" Margin="5">
+                <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}"/>
+            </GroupBox>
+
+
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="NoButton Content" Margin="5">
+                <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}"/>
+            </GroupBox>
+
+            <Button Grid.Row="2" Grid.Column="0" Content="Show Dialog" Width="100" Height="25" Command="{Binding ShowDialogBox}"/>
+            <CheckBox x:Name="UseCustomButton" Grid.Row="2" Grid.Column="1" Content="Use custom button content" VerticalAlignment="Center" HorizontalAlignment="Center" 
                   IsChecked="{Binding IsResultShow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        
+        
         <GroupBox Header="Result" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="5" Grid.RowSpan="2">
             <TextBox IsReadOnly="True" Text="{Binding ResultTextBlock}" Margin="10"/>
         </GroupBox>

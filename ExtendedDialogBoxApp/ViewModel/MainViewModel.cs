@@ -34,8 +34,8 @@ namespace ExtendedDialogBoxApp.ViewModel
                            if (result == null)
                                MessageBox.Show("No result exception");
 
-                           if(IsResultShow)
-                               ResultsTextBlockAdd("ButtonResult returns", result);
+                           
+                           ResultsTextBlockAdd("ButtonResult returns", result);
 
                            if (dialogType is PasswordDialogBox passwordDialog)
                            {
@@ -51,7 +51,6 @@ namespace ExtendedDialogBoxApp.ViewModel
                                ResultsTextBlockAdd("PasswordConfirmation.ToUnsecureString() returns",
                                    passwordCofirmDialog.PasswordConfirmation.ToUnsecureString());
                            }
-
                        }));
             }
         }
@@ -178,17 +177,17 @@ namespace ExtendedDialogBoxApp.ViewModel
             }
         }
 
-        private bool isResultShow = true;
-        public bool IsResultShow
+        private bool isCustomContentUse;
+        public bool IsCustomContentUse
         {
-            get { return isResultShow; }
+            get { return isCustomContentUse; }
             set
             {
-                if (value == isResultShow)
+                if (value == isCustomContentUse)
                     return;
 
-                isResultShow = value;
-                OnPropertyChanged(nameof(IsResultShow));
+                isCustomContentUse = value;
+                OnPropertyChanged(nameof(IsCustomContentUse));
             }
         }
 
