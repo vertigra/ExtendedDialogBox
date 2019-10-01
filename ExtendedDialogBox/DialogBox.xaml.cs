@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Security;
 using System.Windows;
 using System.Windows.Media;
-using static ExtendedDialogBox.Utils.IconHeleper;
 
 namespace ExtendedDialogBox
 {
