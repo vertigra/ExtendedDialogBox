@@ -1,9 +1,9 @@
 <img src="https://img.icons8.com/dusk/100/000000/mailbox-opened-flag-down.png" alt="logo" title="ExtendedDialogBox" align="right" height="60">
 
 # Extended DialogBox 
-[![BCH compliance](https://bettercodehub.com/edge/badge/vertigra/ExtendedDialogBox?branch=master)](https://bettercodehub.com/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/128f8f5eb7024be89fa4ad5a63a0534c)](https://www.codacy.com/manual/vertigra/ExtendedDialogBox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vertigra/ExtendedDialogBox&amp;utm_campaign=Badge_Grade) [![license](https://img.shields.io/github/license/vertigra/ExtendedDialogBox?color=blue%20)](https://github.com/vertigra/ExtendedDialogBox/blob/master/LICENSE) 
+[![BCH compliance](https://bettercodehub.com/edge/badge/vertigra/ExtendedDialogBox?branch=master)](https://bettercodehub.com/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/128f8f5eb7024be89fa4ad5a63a0534c)](https://www.codacy.com/manual/vertigra/ExtendedDialogBox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vertigra/ExtendedDialogBox&amp;utm_campaign=Badge_Grade)
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/ExtendedDialogBox) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/vertigra/ExtendedDialogBox?color=yellow&include_prereleases) ![GitHub watchers](https://img.shields.io/github/watchers/vertigra/ExtendedDialogBox?label=Watch) ![Nuget](https://img.shields.io/nuget/dt/ExtendedDialogBox?label=nuget%20downloads) ![GitHub Pre-Releases](https://img.shields.io/github/downloads-pre/vertigra/ExtendedDialogBox/latest/total?label=github%20dowloads)
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/ExtendedDialogBox) ![Nuget](https://img.shields.io/nuget/dt/ExtendedDialogBox?label=nuget%20downloads) [![license](https://img.shields.io/github/license/vertigra/ExtendedDialogBox?color=blue%20)](https://github.com/vertigra/ExtendedDialogBox/blob/master/LICENSE) 
 
 Five typical dialog boxes:
 * Error DialogBox
@@ -29,6 +29,9 @@ The Password and PasswordConfirmation dialogs return the entered password to Sec
 
 ## Getting Started
 Soon ...
+
+# Demo
+![Typical dialog boxes](ExtendedDialogBoxApp/Demo/demo-diallog-box-0.0.0.1.gif)
 
 
 
