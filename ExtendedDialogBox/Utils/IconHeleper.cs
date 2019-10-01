@@ -12,7 +12,7 @@ namespace ExtendedDialogBox.Utils
     /// </summary>
     internal class IconHeleper
     {
-        internal protected static class IconHelper
+        protected static class IconHelper
         {
             [DllImport("user32.dll")]
             static extern int GetWindowLong(IntPtr hwnd, int index);

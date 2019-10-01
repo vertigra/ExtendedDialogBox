@@ -52,7 +52,7 @@ namespace ExtendedDialogBoxApp.Utils
 
             var secureString = new SecureString();
 
-            foreach (var chr in password.ToCharArray())
+            foreach (var chr in password)
             {
                 secureString.AppendChar(chr);
             }
