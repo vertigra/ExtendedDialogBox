@@ -5,14 +5,14 @@ namespace ExtendedDialogBox.PublicDialogBox
 {
     public class DialogBox
     {
-        internal ExtendedDialogBox.DialogBox mDialogBox;
+        internal DialogBoxWindow mDialogBox;
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
         internal virtual bool IsPasswordBox { get => false; }
         internal virtual bool IsPasswordWithConfirm { get => false; }
 
         internal DialogBox()
         {
-            mDialogBox = new ExtendedDialogBox.DialogBox(DialogBoxImage)
+            mDialogBox = new DialogBoxWindow(DialogBoxImage)
             {
                 ButtonCommand = ButtonCommand
             };

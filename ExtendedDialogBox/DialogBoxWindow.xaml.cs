@@ -1,6 +1,5 @@
 ﻿using ExtendedDialogBox.Command;
 using ExtendedDialogBox.Utils;
-using System;
 using System.Drawing;
 using System.Security;
 using System.Windows;
@@ -8,18 +7,15 @@ using System.Windows.Media;
 
 namespace ExtendedDialogBox
 {
-    public sealed class DialogBox : DialogBoxWindow
+    partial class DialogBoxWindow 
     {
-        internal DialogBox(MessageBoxImage image)
+        internal DialogBoxWindow(MessageBoxImage image)
         {
             InitializeComponent();
 
             InitControls();
             MessageImage = image;
-        }
 
-        protected override void OnSourceInitialized(EventArgs e)
-        {
             if (MessageImage == MessageBoxImage.None)
                 IconHelper.RemoveIcon(this);
         }
@@ -56,7 +52,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty CancelButtonVisiblityProperty =
             DependencyProperty.Register(nameof(CancelButtonVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -70,7 +66,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty NoButtonVisiblityProperty =
             DependencyProperty.Register(nameof(NoButtonVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -84,7 +80,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty YesButtonVisiblityProperty =
             DependencyProperty.Register(nameof(YesButtonVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
 
         #endregion
@@ -99,7 +95,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty OkButtonVisiblityProperty =
             DependencyProperty.Register(nameof(OkButtonVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -117,7 +113,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty CancelButtonLabelProperty =
             DependencyProperty.Register(nameof(CancelButtonLabel), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -131,7 +127,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty NoButtonLabelProperty =
             DependencyProperty.Register(nameof(NoButtonLabel), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -145,7 +141,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty YesButtonLabelProperty =
             DependencyProperty.Register(nameof(YesButtonLabel), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -159,7 +155,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty OkButtonLabelProperty =
             DependencyProperty.Register(nameof(OkButtonLabel), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -177,7 +173,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty PasswordBoxesGridProperty =
             DependencyProperty.Register(nameof(PasswordBoxesGridVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -192,7 +188,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty PasswordConfirmationInputBoxProperty =
             DependencyProperty.Register(nameof(PasswordConfirmationInputBoxVisiblitiy), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -208,7 +204,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty PasswordLabelProperty =
             DependencyProperty.Register(nameof(PasswordLabel), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -222,7 +218,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty PasswordConfirmationLabelProperty =
             DependencyProperty.Register(nameof(PasswordConfirmationLabel), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -238,7 +234,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty MessageProperty =
             DependencyProperty.Register(nameof(Message), typeof(string),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -254,7 +250,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty ImageVisiblityProperty =
             DependencyProperty.Register(nameof(ImageVisiblity), typeof(Visibility),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -304,7 +300,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty MessageIconProperty =
             DependencyProperty.Register(nameof(MessageIcon), typeof(ImageSource),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -318,7 +314,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty WindowTitleIconProperty =
             DependencyProperty.Register(nameof(WindowTitleIcon), typeof(ImageSource),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
@@ -353,7 +349,7 @@ namespace ExtendedDialogBox
 
         private static readonly DependencyProperty ButtonCommandProperty =
             DependencyProperty.Register(nameof(ButtonCommand), typeof(RelayCommand),
-                typeof(DialogBox), null);
+                typeof(DialogBoxWindow), null);
 
         #endregion
 
