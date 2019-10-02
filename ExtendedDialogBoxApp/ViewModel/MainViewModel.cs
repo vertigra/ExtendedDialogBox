@@ -83,6 +83,19 @@ namespace ExtendedDialogBoxApp.ViewModel
         #endregion
 
         #region Command
+        
+        public RelayCommand NoIconsRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = "Ok";
+
+            if (obj != null)
+                param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "NoIcons";
+        });
 
         public RelayCommand QuestionRadioButtonCommand => new RelayCommand(obj =>
         {
@@ -153,23 +166,25 @@ namespace ExtendedDialogBoxApp.ViewModel
 
         private DialogBox GetDialogType()
         {
+            if (DialogType.Equals("NoIcons"))
+                return new DialogBox("Test");
             if(DialogType.Equals("Question"))
-                return new QuestionDialogBox("Question?", "Question?");
+                return new QuestionDialogBox("Question?");
 
             if (DialogType.Equals("Warning"))
-                return new WarningDialogBox("Warning!", "Warning!");
+                return new WarningDialogBox("Warning!");
 
             if (DialogType.Equals("Information"))
-                return new InformationDialogBox("Information", "Information");
+                return new InformationDialogBox("Information");
 
             if (DialogType.Equals("Error"))
-                return new ErrorDialogBox("Error", "Error");
+                return new ErrorDialogBox("Error");
 
             if (DialogType.Equals("Password"))
-                return new PasswordDialogBox("Enter password", "Password");
+                return new PasswordDialogBox("Enter password");
 
             if (DialogType.Equals("PasswordConfirm"))
-                return new PasswordCofirmDialogBox("Enter password", "Password");
+                return new PasswordCofirmDialogBox("Enter password");
 
             return null;
         }
