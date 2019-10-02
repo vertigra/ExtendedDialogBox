@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
@@ -11,7 +9,9 @@ namespace ExtendedDialogBox.PublicDialogBox
         public WarningDialogBox(string message)
         {
             mDialogBox.Message = message;
+            mDialogBox.Title = "Warning!";
         }
+
 
         public WarningDialogBox(string message, string title)
         {

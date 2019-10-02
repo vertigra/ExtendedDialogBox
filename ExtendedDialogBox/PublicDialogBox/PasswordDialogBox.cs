@@ -13,6 +13,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public PasswordDialogBox(string message)
         {
             mDialogBox.Message = message;
+            mDialogBox.Title = "Enter password";
         }
 
         public PasswordDialogBox(string message, string title)

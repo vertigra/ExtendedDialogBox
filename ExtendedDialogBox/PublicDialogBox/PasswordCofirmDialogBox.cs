@@ -14,6 +14,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public PasswordCofirmDialogBox(string message)
         {
             mDialogBox.Message = message;
+            mDialogBox.Title = "Enter password";
         }
 
         public PasswordCofirmDialogBox(string message, string title)

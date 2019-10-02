@@ -9,6 +9,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public InformationDialogBox(string message)
         {
             mDialogBox.Message = message;
+            mDialogBox.Title = "Information";
         }
 
         public InformationDialogBox(string message, string title)

@@ -9,6 +9,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public ErrorDialogBox(string message)
         {
             mDialogBox.Message = message;
+            mDialogBox.Title = "Error!";
         }
 
         public ErrorDialogBox(string message, string title)
