@@ -1,4 +1,5 @@
 ﻿using ExtendedDialogBox.PublicDialogBox;
+using System.Collections.Generic;
 
 namespace ExtendedDialogBoxApp
 {
@@ -37,5 +38,39 @@ namespace ExtendedDialogBoxApp
             return resultString;
         }
 
+        internal string ShowDialog(string dialogButtonType, CustomButtonContent buttonContents)
+        {
+            string result = "No result";
+
+            if (dialogButtonType == "Ok")
+                result = mDialogBox.OkButton(buttonContents.OkButtonContent).ToString();
+
+            if (dialogButtonType == "OkCancel")
+                result = mDialogBox.OkCancelButton(buttonContents.OkButtonContent, buttonContents.CancelButtonContent).ToString();
+
+            if (dialogButtonType == "YesNo")
+                result = mDialogBox.YesNoButton(buttonContents.OkButtonContent, buttonContents.NoButtonContent).ToString();
+
+            if (dialogButtonType == "YesNoCancel")
+                result = mDialogBox.YesNoCancelButton(buttonContents.OkButtonContent, buttonContents.NoButtonContent, 
+                    buttonContents.CancelButtonContent).ToString();
+
+            if (dialogButtonType == "OkYesNoCancel")
+                result = mDialogBox.OkYesNoCancelButton(buttonContents.OkButtonContent, buttonContents.YesButtonContent, 
+                    buttonContents.NoButtonContent, buttonContents.CancelButtonContent).ToString();
+
+            string resultString = $"MessageBoxResult.{result} ";
+
+            return resultString;
+        }
+
+    }
+
+    internal class CustomButtonContent
+    {
+        internal string OkButtonContent { get; set; }
+        internal string CancelButtonContent { get; set; }
+        internal string YesButtonContent { get; set; }
+        internal string NoButtonContent { get; set; }
     }
 }

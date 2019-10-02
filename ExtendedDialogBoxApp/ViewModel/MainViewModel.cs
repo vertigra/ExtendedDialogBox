@@ -1,7 +1,6 @@
 ﻿using ExtendedDialogBox.PublicDialogBox;
 using ExtendedDialogBoxApp.Utils;
 using ExtendedDialogBoxAppCommand;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -29,7 +28,23 @@ namespace ExtendedDialogBoxApp.ViewModel
                                MessageBox.Show("Not defined dialog type");
 
                            ExtendedDialog dialog = new ExtendedDialog(dialogType);
-                           var result = dialog.ShowDialog(DialogButtonType);
+                           string result = null;
+
+                           if (IsCustomContentUse)
+                           {
+                               CustomButtonContent contents = new CustomButtonContent
+                               {
+                                   OkButtonContent = OkButtonContent,
+                                   CancelButtonContent = CancelButtonContent,
+                                   NoButtonContent = NoButtonContent,
+                                   YesButtonContent = YesButtonContent
+                               };
+                               
+                               dialog = new ExtendedDialog(dialogType);
+                               result = dialog.ShowDialog(DialogButtonType, contents);
+                           }
+                           else
+                               result = dialog.ShowDialog(DialogButtonType);
 
                            if (result == null)
                                MessageBox.Show("No result exception");
@@ -162,6 +177,66 @@ namespace ExtendedDialogBoxApp.ViewModel
         #endregion
 
         #region Binding
+
+        #region CustomButtonContent
+
+        private string okButtonContent = "CustomOk";
+        public string OkButtonContent
+        {
+            get { return okButtonContent; }
+            set
+            {
+                if (value.Equals(okButtonContent))
+                    return;
+
+                okButtonContent = value;
+                OnPropertyChanged(nameof(OkButtonContent));
+            }
+        }
+
+        private string cancelButtonContent = "CustomCancel";
+        public string CancelButtonContent
+        {
+            get { return cancelButtonContent; }
+            set
+            {
+                if (value.Equals(cancelButtonContent))
+                    return;
+
+                cancelButtonContent = value;
+                OnPropertyChanged(nameof(CancelButtonContent));
+            }
+        }
+
+        private string yesButtonContent = "CustomYes";
+        public string YesButtonContent
+        {
+            get { return yesButtonContent; }
+            set
+            {
+                if (value.Equals(yesButtonContent))
+                    return;
+
+                yesButtonContent = value;
+                OnPropertyChanged(nameof(YesButtonContent));
+            }
+        }
+
+        private string noButtonContent = "CustomNo";
+        public string NoButtonContent
+        {
+            get { return noButtonContent; }
+            set
+            {
+                if (value.Equals(noButtonContent))
+                    return;
+
+                noButtonContent = value;
+                OnPropertyChanged(nameof(NoButtonContent));
+            }
+        }
+
+        #endregion
 
         private string resultTextBlock = "";
         public string ResultTextBlock

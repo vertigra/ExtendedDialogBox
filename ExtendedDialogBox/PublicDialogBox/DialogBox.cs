@@ -74,7 +74,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public MessageBoxResult OkButton(string okButtonContent = null)
         {
             if (okButtonContent != null)
-                mDialogBox.YesButtonLabel = okButtonContent;
+                mDialogBox.OkButtonLabel = okButtonContent;
 
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
 
@@ -93,7 +93,7 @@ namespace ExtendedDialogBox.PublicDialogBox
                 mDialogBox.OkButtonLabel = okButtonContent;
 
             if (cancelButtonContent != null)
-                mDialogBox.OkButtonLabel = cancelButtonContent;
+                mDialogBox.CancelButtonLabel = cancelButtonContent;
 
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
@@ -154,7 +154,7 @@ namespace ExtendedDialogBox.PublicDialogBox
                 mDialogBox.YesButtonLabel = yesButtonContent;
 
             if (noButtonContent != null)
-                mDialogBox.YesButtonLabel = noButtonContent;
+                mDialogBox.NoButtonLabel = noButtonContent;
 
             if (cancelButtonContent != null)
                 mDialogBox.CancelButtonLabel = cancelButtonContent;
@@ -184,7 +184,7 @@ namespace ExtendedDialogBox.PublicDialogBox
                 mDialogBox.YesButtonLabel = yesButtonContent;
 
             if (noButtonContent != null)
-                mDialogBox.YesButtonLabel = noButtonContent;
+                mDialogBox.NoButtonLabel = noButtonContent;
 
             if (cancelButtonContent != null)
                 mDialogBox.CancelButtonLabel = cancelButtonContent;
