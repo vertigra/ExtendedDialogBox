@@ -33,8 +33,10 @@ PM> Install-Package ExtendedDialogBox -Version 0.0.0.1-beta
 Coming soon ...
 
 # Demo
-![Typical dialog boxes](ExtendedDialogBoxApp/Demo/demo-diallog-box-0.0.0.1.gif)
-
+### Typical dialog boxes and standart buttons 
+![Typical dialog boxes with standart buttons](ExtendedDialogBoxApp/Demo/demo-diallog-box-0.0.1.1-sbsd.gif)
+### Typical dialog boxes and custom buttons 
+![Typical dialog boxes with custom buttons](ExtendedDialogBoxApp/Demo/demo-diallog-box-0.0.1.1-sbcd.gif)
 
 
 ## Thanks
