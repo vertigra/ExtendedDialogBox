@@ -9,7 +9,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public QuestionDialogBox(string message)
         {
             mDialogBox.Message = message;
-            mDialogBox.Title = "Enter question?";
+            mDialogBox.Title = "Question?";
         }
 
         public QuestionDialogBox(string message, string title)

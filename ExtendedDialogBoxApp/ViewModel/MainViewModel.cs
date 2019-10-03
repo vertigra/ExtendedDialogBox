@@ -11,7 +11,7 @@ namespace ExtendedDialogBoxApp.ViewModel
     {
         private RelayCommand showDialogBox;
         private string DialogButtonType { get; set; } = "Ok";
-        private string DialogType { get; set; } = "Question";
+        private string DialogType { get; set; } = "NoIcons";
 
         public RelayCommand ShowDialogBox
         {
@@ -167,7 +167,8 @@ namespace ExtendedDialogBoxApp.ViewModel
         private DialogBox GetDialogType()
         {
             if (DialogType.Equals("NoIcons"))
-                return new DialogBox("Test");
+                return new DialogBox();
+
             if(DialogType.Equals("Question"))
                 return new QuestionDialogBox("Question?");
 
