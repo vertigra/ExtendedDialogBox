@@ -38,7 +38,7 @@
         <GroupBox Grid.Row="0" Grid.Column="1" Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
                 <StackPanel Margin="5">
                     <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
-                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" IsChecked="True" GroupName="radioButton"/>
+                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
                     <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="OkCancel" GroupName="radioButton"/>
                     <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
