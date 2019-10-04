@@ -5,6 +5,7 @@ namespace ExtendedDialogBox.PublicDialogBox
 {
     public class PasswordDialogBox : DialogBox
     {
+
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
         internal override bool IsPasswordBox => true;
 

@@ -1,15 +1,15 @@
 ﻿using ExtendedDialogBox.Command;
-using ExtendedDialogBox.Utils;
-using System.Drawing;
 using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
     public class BaseDialogBox
     {
+        //todo added edtable label for password and password confirm
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
         internal virtual bool IsPasswordBox { get => false; }
         internal virtual bool IsPasswordWithConfirm { get => false; }
+
         internal DialogBoxWindow mDialogBox;
 
         internal BaseDialogBox()

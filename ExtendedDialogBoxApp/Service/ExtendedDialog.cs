@@ -38,7 +38,7 @@ namespace ExtendedDialogBoxApp
             return resultString;
         }
 
-        internal string ShowDialog(string dialogButtonType, CustomButtonContent buttonContents)
+        internal string ShowDialog(string dialogButtonType, CustomButtonContent buttonContents, CustomPasswordLabel labels)
         {
             string result = "No result";
 
@@ -59,11 +59,13 @@ namespace ExtendedDialogBoxApp
                 result = mDialogBox.OkYesNoCancelButton(buttonContents.OkButtonContent, buttonContents.YesButtonContent, 
                     buttonContents.NoButtonContent, buttonContents.CancelButtonContent).ToString();
 
+            //mDialogBox.PasswordLabel = labels.PasswordLabel;
+            //mDialogBox.PasswordConfirmLabel = labels.PasswordConfirmLabel;
+
             string resultString = $"MessageBoxResult.{result} ";
 
             return resultString;
         }
-
     }
 
     internal class CustomButtonContent
@@ -73,4 +75,10 @@ namespace ExtendedDialogBoxApp
         internal string YesButtonContent { get; set; }
         internal string NoButtonContent { get; set; }
     }
+
+    internal class CustomPasswordLabel
+    {
+        internal string PasswordLabel { get; set; }
+        internal string PasswordConfirmLabel { get; set; }
+     }
 }

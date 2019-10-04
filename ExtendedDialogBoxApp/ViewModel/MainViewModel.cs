@@ -37,11 +37,17 @@ namespace ExtendedDialogBoxApp.ViewModel
                                    OkButtonContent = OkButtonContent,
                                    CancelButtonContent = CancelButtonContent,
                                    NoButtonContent = NoButtonContent,
-                                   YesButtonContent = YesButtonContent
+                                   YesButtonContent = YesButtonContent,                                   
+                               };
+
+                               CustomPasswordLabel labels = new CustomPasswordLabel
+                               {
+                                   PasswordLabel = PasswordLabel,
+                                   PasswordConfirmLabel = PasswordConfirmLabel
                                };
                                
                                dialog = new ExtendedDialog(dialogType);
-                               result = dialog.ShowDialog(DialogButtonType, contents);
+                               result = dialog.ShowDialog(DialogButtonType, contents, labels);
                            }
                            else
                                result = dialog.ShowDialog(DialogButtonType);
@@ -249,6 +255,38 @@ namespace ExtendedDialogBoxApp.ViewModel
 
                 noButtonContent = value;
                 OnPropertyChanged(nameof(NoButtonContent));
+            }
+        }
+
+        #endregion
+
+        #region CustomLabel
+
+        private string passwordLabel = "CustomPasswordLabel";
+        public string PasswordLabel
+        {
+            get { return passwordLabel; }
+            set
+            {
+                if (value.Equals(passwordLabel))
+                    return;
+
+                passwordLabel = value;
+                OnPropertyChanged(nameof(PasswordLabel));
+            }
+        }
+
+        private string passwordConfirmLabel = "CustomConfirmLabel";
+        public string PasswordConfirmLabel
+        {
+            get { return passwordConfirmLabel; }
+            set
+            {
+                if (value.Equals(passwordConfirmLabel))
+                    return;
+
+                passwordConfirmLabel = value;
+                OnPropertyChanged(nameof(PasswordConfirmLabel));
             }
         }
 

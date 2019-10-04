@@ -45,12 +45,6 @@ namespace ExtendedDialogBox
             PasswordConfirmationLabel = "Confirm";
         }
 
-        #region WindowStyle
-
-        
-
-        #endregion
-
         #region Button Visiblity
 
         #region CancelButton Visiblity
@@ -253,7 +247,7 @@ namespace ExtendedDialogBox
 
         #region ImageVisiblity
 
-        internal Visibility ImageVisiblity
+        private Visibility ImageVisiblity
         {
             get { return (Visibility)GetValue(ImageVisiblityProperty); }
             set { SetValue(ImageVisiblityProperty, value); }
@@ -268,7 +262,7 @@ namespace ExtendedDialogBox
         #region MessageImage
 
         private MessageBoxImage messageImage;
-        internal MessageBoxImage MessageImage
+        private MessageBoxImage MessageImage
         {
             get { return messageImage; }
             set
@@ -284,7 +278,7 @@ namespace ExtendedDialogBox
         #region Icon 
 
         private Icon dialogBoxIcon;
-        internal Icon DialogBoxIcon
+        private Icon DialogBoxIcon
         {
             get { return dialogBoxIcon; }
             set
@@ -317,7 +311,7 @@ namespace ExtendedDialogBox
 
         #region TilleIcon 
 
-        internal ImageSource WindowTitleIcon
+        private ImageSource WindowTitleIcon
         {
             get { return (ImageSource) GetValue (WindowTitleIconProperty); }
             set { SetValue(WindowTitleIconProperty, value); }
