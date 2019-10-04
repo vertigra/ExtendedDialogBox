@@ -8,13 +8,13 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
         internal override bool IsPasswordBox => true;
 
-        public SecureString Password { get => mDialogBox.Password; } 
+        public SecureString Password { get => mDialogBox.Password; }
 
         public PasswordDialogBox(string message) : base(message)
         {
             mDialogBox.Title = "Enter password";
         }
 
-        public PasswordDialogBox(string message, string title) : base(message, title) { }
+        public PasswordDialogBox(string message, string title) : base(message, title) {}
     }
 }

@@ -11,7 +11,6 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.Title = "Warning!";
         }
 
-
         public WarningDialogBox(string message, string title) : base(message, title) { }
     }
 }

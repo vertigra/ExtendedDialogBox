@@ -50,6 +50,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PublicDialogBox\BaseDialogBox.cs" />
     <Compile Include="PublicDialogBox\DialogBox.cs" />
     <Compile Include="PublicDialogBox\ErrorDialogBox.cs" />
     <Compile Include="PublicDialogBox\InformationDialogBox.cs" />
