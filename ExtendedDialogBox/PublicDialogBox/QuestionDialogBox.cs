@@ -6,16 +6,26 @@ namespace ExtendedDialogBox.PublicDialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
 
-        public QuestionDialogBox(string message)
+        public QuestionDialogBox(string message) : base(message)
+        {
+            mDialogBox.Title = "Question?";
+        }
+
+        public QuestionDialogBox(string message, string title) : base(message, title)
+        {
+        }
+
+
+        /*public QuestionDialogBox(string message)
         {
             mDialogBox.Message = message;
-            mDialogBox.Title = "Enter question?";
+            
         }
 
         public QuestionDialogBox(string message, string title)
         {
             mDialogBox.Message = message;
             mDialogBox.Title = title;
-        }
+        }*/
     }
 }

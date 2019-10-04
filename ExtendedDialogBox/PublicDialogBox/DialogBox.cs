@@ -10,7 +10,27 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal virtual bool IsPasswordBox { get => false; }
         internal virtual bool IsPasswordWithConfirm { get => false; }
 
-        public DialogBox()
+        /*public DialogBox()
+        {
+
+        }*/
+
+        public DialogBox(string message)
+        {
+            InitDialogBox();
+
+            mDialogBox.Message = message;
+        }
+
+        public DialogBox(string message, string title)
+        {
+            InitDialogBox();
+
+            mDialogBox.Message = message;
+            mDialogBox.Title = title;
+        }
+
+        private void InitDialogBox()
         {
             mDialogBox = new DialogBoxWindow(DialogBoxImage)
             {
