@@ -10,7 +10,6 @@ namespace ExtendedDialogBox.Utils
     /// 
     /// Author <see cref="https://www.wpftutorial.net/RemoveIcon.html">How to remove the icon of a WPF window</see>
     /// </summary>
-    [Obsolete]
     internal static class IconHelper
     {
 
@@ -48,6 +47,9 @@ namespace ExtendedDialogBox.Utils
             // Update the window's non-client area to reflect the changes
             SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE |
                   SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+
+            SendMessage(hwnd, WM_SETICON, new IntPtr(1), IntPtr.Zero);
+            SendMessage(hwnd, WM_SETICON, IntPtr.Zero, IntPtr.Zero);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using ExtendedDialogBox.Command;
+using ExtendedDialogBox.Utils;
+using System.Drawing;
 using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox

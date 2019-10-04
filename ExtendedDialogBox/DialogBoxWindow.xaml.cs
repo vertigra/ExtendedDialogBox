@@ -1,5 +1,6 @@
 ﻿using ExtendedDialogBox.Command;
 using ExtendedDialogBox.Utils;
+using System;
 using System.Drawing;
 using System.Security;
 using System.Windows;
@@ -16,6 +17,12 @@ namespace ExtendedDialogBox
 
             InitControls();
             MessageImage = image;
+        }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            if (MessageImage == MessageBoxImage.None)
+                IconHelper.RemoveIcon(this);
         }
 
         private void InitControls()
@@ -37,6 +44,12 @@ namespace ExtendedDialogBox
             PasswordLabel = "Password";
             PasswordConfirmationLabel = "Confirm";
         }
+
+        #region WindowStyle
+
+        
+
+        #endregion
 
         #region Button Visiblity
 
@@ -304,7 +317,7 @@ namespace ExtendedDialogBox
 
         #region TilleIcon 
 
-        private ImageSource WindowTitleIcon
+        internal ImageSource WindowTitleIcon
         {
             get { return (ImageSource) GetValue (WindowTitleIconProperty); }
             set { SetValue(WindowTitleIconProperty, value); }
