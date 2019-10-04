@@ -6,17 +6,14 @@ namespace ExtendedDialogBox.PublicDialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Error;
 
-        public ErrorDialogBox(string message)
+        public ErrorDialogBox(string message) : base(message)
         {
-            mDialogBox.Message = message;
             mDialogBox.Title = "Error!";
         }
 
-        public ErrorDialogBox(string message, string title)
-        {
-            mDialogBox.Message = message;
-            mDialogBox.Title = title;
-        }
+        public ErrorDialogBox(string message, string title) : base(message, title) { }
+
+        
 
     }
 }

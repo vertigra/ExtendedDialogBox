@@ -167,7 +167,7 @@ namespace ExtendedDialogBoxApp.ViewModel
         private DialogBox GetDialogType()
         {
             if (DialogType.Equals("NoIcons"))
-                return new DialogBox();
+                return new DialogBox("Any text message", "Title");
 
             if(DialogType.Equals("Question"))
                 return new QuestionDialogBox("Question?");

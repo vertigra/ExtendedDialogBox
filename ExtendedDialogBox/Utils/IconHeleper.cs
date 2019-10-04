@@ -10,6 +10,7 @@ namespace ExtendedDialogBox.Utils
     /// 
     /// Author <see cref="https://www.wpftutorial.net/RemoveIcon.html">How to remove the icon of a WPF window</see>
     /// </summary>
+    [Obsolete]
     internal static class IconHelper
     {
 
@@ -33,8 +34,9 @@ namespace ExtendedDialogBox.Utils
         const int SWP_NOMOVE = 0x0002;
         const int SWP_NOZORDER = 0x0004;
         const int SWP_FRAMECHANGED = 0x0020;
+        const uint WM_SETICON = 0x0080;
 
-        internal static void RemoveIcon(Window window)
+        public static void RemoveIcon(Window window)
         {
             // Get this window's handle
             IntPtr hwnd = new WindowInteropHelper(window).Handle;

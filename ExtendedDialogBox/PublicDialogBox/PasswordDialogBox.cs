@@ -10,16 +10,11 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         public SecureString Password { get => mDialogBox.Password; } 
 
-        public PasswordDialogBox(string message)
+        public PasswordDialogBox(string message) : base(message)
         {
-            mDialogBox.Message = message;
             mDialogBox.Title = "Enter password";
         }
 
-        public PasswordDialogBox(string message, string title)
-        {
-            mDialogBox.Message = message;
-            mDialogBox.Title = title;
-        }
+        public PasswordDialogBox(string message, string title) : base(message, title) { }
     }
 }

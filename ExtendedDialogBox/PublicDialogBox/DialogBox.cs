@@ -10,16 +10,12 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal virtual bool IsPasswordBox { get => false; }
         internal virtual bool IsPasswordWithConfirm { get => false; }
 
-        /*public DialogBox()
-        {
-
-        }*/
-
         public DialogBox(string message)
         {
             InitDialogBox();
 
             mDialogBox.Message = message;
+            
         }
 
         public DialogBox(string message, string title)
@@ -221,6 +217,4 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #endregion
     }
-
-
 }

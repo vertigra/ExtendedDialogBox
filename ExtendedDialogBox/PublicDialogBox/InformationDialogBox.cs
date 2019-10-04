@@ -6,16 +6,11 @@ namespace ExtendedDialogBox.PublicDialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Information;
 
-        public InformationDialogBox(string message)
+        public InformationDialogBox(string message) : base (message)
         {
-            mDialogBox.Message = message;
             mDialogBox.Title = "Information";
         }
 
-        public InformationDialogBox(string message, string title)
-        {
-            mDialogBox.Message = message;
-            mDialogBox.Title = title;
-        }
+        public InformationDialogBox(string message, string title) : base (message, title) { }
     }
 }

@@ -11,21 +11,6 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.Title = "Question?";
         }
 
-        public QuestionDialogBox(string message, string title) : base(message, title)
-        {
-        }
-
-
-        /*public QuestionDialogBox(string message)
-        {
-            mDialogBox.Message = message;
-            
-        }
-
-        public QuestionDialogBox(string message, string title)
-        {
-            mDialogBox.Message = message;
-            mDialogBox.Title = title;
-        }*/
+        public QuestionDialogBox(string message, string title) : base(message, title) { }
     }
 }

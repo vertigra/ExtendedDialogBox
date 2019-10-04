@@ -7,7 +7,8 @@ using System.Windows.Media;
 
 namespace ExtendedDialogBox
 {
-    partial class DialogBoxWindow 
+
+    partial class DialogBoxWindow
     {
         internal DialogBoxWindow(MessageBoxImage image)
         {
@@ -15,9 +16,6 @@ namespace ExtendedDialogBox
 
             InitControls();
             MessageImage = image;
-
-            if (MessageImage == MessageBoxImage.None)
-                IconHelper.RemoveIcon(this);
         }
 
         private void InitControls()
@@ -308,7 +306,7 @@ namespace ExtendedDialogBox
 
         private ImageSource WindowTitleIcon
         {
-            get { return (ImageSource)GetValue (WindowTitleIconProperty); }
+            get { return (ImageSource) GetValue (WindowTitleIconProperty); }
             set { SetValue(WindowTitleIconProperty, value); }
         }
 
