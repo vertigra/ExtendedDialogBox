@@ -8,7 +8,7 @@ namespace ExtendedDialogBoxApp
     /// </summary>
     class ExtendedDialog
     {
-        private readonly DialogBox mDialogBox;
+        private DialogBox mDialogBox;
         internal ExtendedDialog(DialogBox DialogBox)
         {
             mDialogBox = DialogBox;
@@ -38,9 +38,27 @@ namespace ExtendedDialogBoxApp
             return resultString;
         }
 
-        internal string ShowDialog(string dialogButtonType, CustomButtonContent buttonContents)
+        internal string ShowDialog(string dialogButtonType, CustomButtonContent buttonContents, CustomPasswordLabel labels)
         {
             string result = "No result";
+
+            if (mDialogBox is PasswordCofirmDialogBox)
+            {
+                var dialogBox = mDialogBox as PasswordCofirmDialogBox;
+
+                dialogBox.PasswordLabel = labels.PasswordLabel;
+                dialogBox.PasswordConfirmLabel = labels.PasswordConfirmLabel;
+
+                mDialogBox = dialogBox;
+            }
+            else if (mDialogBox is PasswordDialogBox)
+            {
+                var dialogBox = mDialogBox as PasswordDialogBox;
+
+                dialogBox.PasswordLabel = labels.PasswordLabel;
+
+                mDialogBox = dialogBox;
+            }
 
             if (dialogButtonType == "Ok")
                 result = mDialogBox.OkButton(buttonContents.OkButtonContent).ToString();
@@ -52,18 +70,17 @@ namespace ExtendedDialogBoxApp
                 result = mDialogBox.YesNoButton(buttonContents.OkButtonContent, buttonContents.NoButtonContent).ToString();
 
             if (dialogButtonType == "YesNoCancel")
-                result = mDialogBox.YesNoCancelButton(buttonContents.OkButtonContent, buttonContents.NoButtonContent, 
+                result = mDialogBox.YesNoCancelButton(buttonContents.OkButtonContent, buttonContents.NoButtonContent,
                     buttonContents.CancelButtonContent).ToString();
 
             if (dialogButtonType == "OkYesNoCancel")
-                result = mDialogBox.OkYesNoCancelButton(buttonContents.OkButtonContent, buttonContents.YesButtonContent, 
+                result = mDialogBox.OkYesNoCancelButton(buttonContents.OkButtonContent, buttonContents.YesButtonContent,
                     buttonContents.NoButtonContent, buttonContents.CancelButtonContent).ToString();
 
             string resultString = $"MessageBoxResult.{result} ";
 
             return resultString;
         }
-
     }
 
     internal class CustomButtonContent
@@ -73,4 +90,10 @@ namespace ExtendedDialogBoxApp
         internal string YesButtonContent { get; set; }
         internal string NoButtonContent { get; set; }
     }
+
+    internal class CustomPasswordLabel
+    {
+        internal string PasswordLabel { get; set; }
+        internal string PasswordConfirmLabel { get; set; }
+     }
 }

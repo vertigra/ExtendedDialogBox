@@ -18,11 +18,27 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="200" />
         </Grid.RowDefinitions>
-        
-        <GroupBox Grid.Row="0" Grid.Column="0" Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
+
+
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="DialogBox (NoIcons)" VerticalAlignment="Top" Margin="5">
+            <StackPanel Margin="5">
+                <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding NoIconsRadioButtonCommand}" CommandParameter="Ok" IsChecked="True" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding NoIconsRadioButtonCommand}" CommandParameter="OkCancel" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding NoIconsRadioButtonCommand}" CommandParameter="YesNo" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="YesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding NoIconsRadioButtonCommand}" CommandParameter="YesNoCancel" GroupName="radioButton"/>
+                <RadioButton Width="150" Height="Auto" Content="OkYesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
+                                 Command="{Binding NoIconsRadioButtonCommand}" CommandParameter="OkYesNoCancel" GroupName="radioButton"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="0" Grid.Column="1" Header="Question DialogBox" VerticalAlignment="Top" Margin="5">
                 <StackPanel Margin="5">
                     <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
-                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" IsChecked="True" GroupName="radioButton"/>
+                                 Command="{Binding QuestionRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
                     <RadioButton Width="150" Height="Auto" Content="OkCancel Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="OkCancel" GroupName="radioButton"/>
                     <RadioButton Width="150" Height="Auto" Content="YesNo Button" VerticalContentAlignment="Center" Margin="3"
@@ -32,9 +48,9 @@
                     <RadioButton Width="150" Height="Auto" Content="OkYesNoCancel Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding QuestionRadioButtonCommand}" CommandParameter="OkYesNoCancel" GroupName="radioButton"/>
                 </StackPanel>
-            </GroupBox>
+        </GroupBox>
 
-        <GroupBox Grid.Row="0" Grid.Column="1" Header="Warning DialogBox" VerticalAlignment="Top" Margin="5">
+        <GroupBox Grid.Row="0" Grid.Column="2" Header="Warning DialogBox" VerticalAlignment="Top" Margin="5">
             <StackPanel Margin="5">
                 <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding WarningRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
@@ -49,7 +65,7 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="0" Grid.Column="2" Header="Information DialogBox" VerticalAlignment="Top" Margin="5">
+        <GroupBox Grid.Row="0" Grid.Column="3" Header="Information DialogBox" VerticalAlignment="Top" Margin="5">
             <StackPanel Margin="5">
                 <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding InformationRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
@@ -64,7 +80,7 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="0" Grid.Column="3" Header="Error DialogBox" VerticalAlignment="Top" Margin="5">
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Error DialogBox" VerticalAlignment="Top" Margin="5">
             <StackPanel Margin="5">
                 <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding ErrorRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
@@ -79,7 +95,7 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Grid.Column="0" Header="Password DialogBox" VerticalAlignment="Top" Margin="5">
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Password DialogBox" VerticalAlignment="Top" Margin="5">
             <StackPanel Margin="5">
                 <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding PasswordRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
@@ -94,7 +110,7 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Grid.Column="1" Header="PasswordConfirm DialogBox" VerticalAlignment="Top" Margin="5">
+        <GroupBox Grid.Row="1" Grid.Column="2" Header="PasswordConfirm DialogBox" VerticalAlignment="Top" Margin="5">
             <StackPanel Margin="5">
                 <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" Margin="3"
                                  Command="{Binding PasswordConfirmRadioButtonCommand}" CommandParameter="Ok" GroupName="radioButton"/>
@@ -109,13 +125,14 @@
             </StackPanel>
         </GroupBox>
 
-        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -137,12 +154,21 @@
                 <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}" Text="{Binding NoButtonContent}"/>
             </GroupBox>
 
+
+            <GroupBox Grid.Row="0" Grid.Column="2" Header="Password label" Margin="5">
+                <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}" Text="{Binding PasswordLabel}"/>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Grid.Column="2" Header="PasswordConfirm label" Margin="5">
+                <TextBox Margin="5" Height="25" IsEnabled="{Binding ElementName=UseCustomButton, Path=IsChecked}" Text="{Binding PasswordConfirmLabel}"/>
+            </GroupBox>
+
             <Button Grid.Row="2" Grid.Column="0" Content="Show Dialog" Width="100" Height="25" Command="{Binding ShowDialogBox}"/>
             <CheckBox x:Name="UseCustomButton" Grid.Row="2" Grid.Column="1" Content="Use custom button content" VerticalAlignment="Center" HorizontalAlignment="Center" 
                   IsChecked="{Binding IsCustomContentUse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         
-        <GroupBox Header="Result" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="5" Grid.RowSpan="2">
+        <GroupBox Header="Result" Grid.Row="2" Grid.Column="3"  Margin="5" Grid.RowSpan="2">
             <TextBox IsReadOnly="True" Text="{Binding ResultTextBlock}" Margin="10"/>
         </GroupBox>
     </Grid>

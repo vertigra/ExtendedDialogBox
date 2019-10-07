@@ -11,7 +11,7 @@ namespace ExtendedDialogBoxApp.ViewModel
     {
         private RelayCommand showDialogBox;
         private string DialogButtonType { get; set; } = "Ok";
-        private string DialogType { get; set; } = "Question";
+        private string DialogType { get; set; } = "NoIcons";
 
         public RelayCommand ShowDialogBox
         {
@@ -37,11 +37,18 @@ namespace ExtendedDialogBoxApp.ViewModel
                                    OkButtonContent = OkButtonContent,
                                    CancelButtonContent = CancelButtonContent,
                                    NoButtonContent = NoButtonContent,
-                                   YesButtonContent = YesButtonContent
+                                   YesButtonContent = YesButtonContent,                                   
+                               };
+
+                               CustomPasswordLabel labels = new CustomPasswordLabel
+                               {
+                                   PasswordLabel = PasswordLabel,
+                                   PasswordConfirmLabel = PasswordConfirmLabel
                                };
                                
+                               
                                dialog = new ExtendedDialog(dialogType);
-                               result = dialog.ShowDialog(DialogButtonType, contents);
+                               result = dialog.ShowDialog(DialogButtonType, contents, labels);
                            }
                            else
                                result = dialog.ShowDialog(DialogButtonType);
@@ -83,6 +90,19 @@ namespace ExtendedDialogBoxApp.ViewModel
         #endregion
 
         #region Command
+        
+        public RelayCommand NoIconsRadioButtonCommand => new RelayCommand(obj =>
+        {
+            ResultTextBlock = "";
+
+            string param = "Ok";
+
+            if (obj != null)
+                param = obj as string;
+
+            DialogButtonType = param;
+            DialogType = "NoIcons";
+        });
 
         public RelayCommand QuestionRadioButtonCommand => new RelayCommand(obj =>
         {
@@ -153,23 +173,26 @@ namespace ExtendedDialogBoxApp.ViewModel
 
         private DialogBox GetDialogType()
         {
+            if (DialogType.Equals("NoIcons"))
+                return new DialogBox("Any text message", "Title");
+
             if(DialogType.Equals("Question"))
-                return new QuestionDialogBox("Question?", "Question?");
+                return new QuestionDialogBox("Question?");
 
             if (DialogType.Equals("Warning"))
-                return new WarningDialogBox("Warning!", "Warning!");
+                return new WarningDialogBox("Warning!");
 
             if (DialogType.Equals("Information"))
-                return new InformationDialogBox("Information", "Information");
+                return new InformationDialogBox("Information");
 
             if (DialogType.Equals("Error"))
-                return new ErrorDialogBox("Error", "Error");
+                return new ErrorDialogBox("Error");
 
             if (DialogType.Equals("Password"))
-                return new PasswordDialogBox("Enter password", "Password");
+                return new PasswordDialogBox("Enter password");
 
             if (DialogType.Equals("PasswordConfirm"))
-                return new PasswordCofirmDialogBox("Enter password", "Password");
+                return new PasswordCofirmDialogBox("Enter password");
 
             return null;
         }
@@ -233,6 +256,38 @@ namespace ExtendedDialogBoxApp.ViewModel
 
                 noButtonContent = value;
                 OnPropertyChanged(nameof(NoButtonContent));
+            }
+        }
+
+        #endregion
+
+        #region CustomLabel
+
+        private string passwordLabel = "CustomPasswordLabel";
+        public string PasswordLabel
+        {
+            get { return passwordLabel; }
+            set
+            {
+                if (value.Equals(passwordLabel))
+                    return;
+
+                passwordLabel = value;
+                OnPropertyChanged(nameof(PasswordLabel));
+            }
+        }
+
+        private string passwordConfirmLabel = "CustomConfirmLabel";
+        public string PasswordConfirmLabel
+        {
+            get { return passwordConfirmLabel; }
+            set
+            {
+                if (value.Equals(passwordConfirmLabel))
+                    return;
+
+                passwordConfirmLabel = value;
+                OnPropertyChanged(nameof(PasswordConfirmLabel));
             }
         }
 

@@ -33,8 +33,9 @@ namespace ExtendedDialogBox.Utils
         const int SWP_NOMOVE = 0x0002;
         const int SWP_NOZORDER = 0x0004;
         const int SWP_FRAMECHANGED = 0x0020;
+        const uint WM_SETICON = 0x0080;
 
-        internal static void RemoveIcon(Window window)
+        public static void RemoveIcon(Window window)
         {
             // Get this window's handle
             IntPtr hwnd = new WindowInteropHelper(window).Handle;
@@ -46,6 +47,9 @@ namespace ExtendedDialogBox.Utils
             // Update the window's non-client area to reflect the changes
             SetWindowPos(hwnd, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE |
                   SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
+
+            SendMessage(hwnd, WM_SETICON, new IntPtr(1), IntPtr.Zero);
+            SendMessage(hwnd, WM_SETICON, IntPtr.Zero, IntPtr.Zero);
         }
     }
 }

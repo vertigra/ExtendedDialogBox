@@ -23,6 +23,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,7 +44,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -51,6 +52,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PublicDialogBox\BaseDialogBox.cs" />
     <Compile Include="PublicDialogBox\DialogBox.cs" />
     <Compile Include="PublicDialogBox\ErrorDialogBox.cs" />
     <Compile Include="PublicDialogBox\InformationDialogBox.cs" />
@@ -60,13 +62,13 @@
     <Compile Include="Utils\Extension.cs" />
     <Compile Include="PublicDialogBox\QuestionDialogBox.cs" />
     <Compile Include="Utils\IconHeleper.cs" />
-    <Page Include="DialogBox.xaml">
+    <Page Include="DialogBoxWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Command\RelayCommand.cs" />
-    <Compile Include="DialogBox.xaml.cs">
-      <DependentUpon>DialogBox.xaml</DependentUpon>
+    <Compile Include="DialogBoxWindow.xaml.cs">
+      <DependentUpon>DialogBoxWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
