@@ -42,7 +42,7 @@ namespace ExtendedDialogBox
 
             //default contetnt for password box label
             PasswordLabel = "Password";
-            PasswordConfirmationLabel = "Confirm";
+            PasswordConfirmationLabel = "Password Confirm";
         }
 
         #region Button Visiblity

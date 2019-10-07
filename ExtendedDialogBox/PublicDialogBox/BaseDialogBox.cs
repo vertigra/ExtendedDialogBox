@@ -5,14 +5,13 @@ namespace ExtendedDialogBox.PublicDialogBox
 {
     public class BaseDialogBox
     {
-        //todo added edtable label for password and password confirm
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
         internal virtual bool IsPasswordBox { get => false; }
         internal virtual bool IsPasswordWithConfirm { get => false; }
 
         internal DialogBoxWindow mDialogBox;
 
-        internal BaseDialogBox()
+        private protected BaseDialogBox()
         {
             mDialogBox = new DialogBoxWindow(DialogBoxImage)
             {
@@ -27,7 +26,6 @@ namespace ExtendedDialogBox.PublicDialogBox
 
             if (IsPasswordWithConfirm)
                 mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
-
         }
 
         #region Command
@@ -74,6 +72,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #region OkButton
 
+        /// <summary>
+        /// Shows DialogBox with Ok button
+        /// </summary>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkButton()
         {
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
@@ -82,6 +84,11 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok button
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription OK on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkButton(string okButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
@@ -94,6 +101,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #region OkCancelButton
 
+        /// <summary>
+        /// Shows DialogBox with Ok and Cancel buttons
+        /// </summary>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkCancelButton()
         {
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
@@ -103,6 +114,11 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok and Cancel buttons
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription OK on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkCancelButton(string okButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
@@ -111,6 +127,12 @@ namespace ExtendedDialogBox.PublicDialogBox
             return result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok and Cancel buttons
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription OK on the button</param>
+        /// <param name="cancelButtonContent">Text replacing the inscription Cancel on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkCancelButton(string okButtonContent, string cancelButtonContent)
         {
 

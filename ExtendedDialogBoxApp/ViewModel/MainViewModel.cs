@@ -46,6 +46,7 @@ namespace ExtendedDialogBoxApp.ViewModel
                                    PasswordConfirmLabel = PasswordConfirmLabel
                                };
                                
+                               
                                dialog = new ExtendedDialog(dialogType);
                                result = dialog.ShowDialog(DialogButtonType, contents, labels);
                            }
