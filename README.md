@@ -28,7 +28,7 @@ The Password and PasswordConfirmation dialogs return the entered password to Sec
 ## Getting Started
 
 ### Nuget install
-PM> Install-Package ExtendedDialogBox -Version 0.0.1.1-beta
+PM> Install-Package ExtendedDialogBox -Version 0.0.1.3-beta
 
 Coming soon ...
 
