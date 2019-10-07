@@ -51,7 +51,8 @@ namespace ExtendedDialogBoxApp
 
                 mDialogBox = dialogBox;
             }
-            else if (mDialogBox is PasswordDialogBox)
+
+            if (mDialogBox is PasswordDialogBox)
             {
                 var dialogBox = mDialogBox as PasswordDialogBox;
 

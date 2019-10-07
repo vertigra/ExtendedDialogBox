@@ -3,6 +3,9 @@ using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Shows a dialog box with a question mark icon and fields for entering a password and re-entering a password
+    /// </summary>
     public class PasswordCofirmDialogBox : DialogBox
     { 
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
@@ -20,7 +23,8 @@ namespace ExtendedDialogBox.PublicDialogBox
             get => mDialogBox.PasswordLabel;
             set
             {
-                if (value == mDialogBox.PasswordLabel) return;
+                if (value == mDialogBox.PasswordLabel)
+                    return;
 
                 mDialogBox.PasswordLabel = value;
             }
@@ -31,7 +35,8 @@ namespace ExtendedDialogBox.PublicDialogBox
             get => mDialogBox.PasswordConfirmationLabel;
             set
             {
-                if (value == mDialogBox.PasswordConfirmationLabel) return;
+                if (value == mDialogBox.PasswordConfirmationLabel)
+                    return;
 
                 mDialogBox.PasswordConfirmationLabel = value;
             }

@@ -2,6 +2,9 @@
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Displays a dialog box with an information icon.
+    /// </summary>
     public class InformationDialogBox : DialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Information;
