@@ -1,5 +1,8 @@
 ﻿namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Shows a dialog box without an icon
+    /// </summary>
     public class DialogBox : BaseDialogBox
     {
         public DialogBox(string message) : base()

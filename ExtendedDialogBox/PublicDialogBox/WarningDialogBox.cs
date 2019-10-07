@@ -2,6 +2,9 @@
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Displays a warning dialog box
+    /// </summary>
     public class WarningDialogBox : DialogBox
     {
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Warning;

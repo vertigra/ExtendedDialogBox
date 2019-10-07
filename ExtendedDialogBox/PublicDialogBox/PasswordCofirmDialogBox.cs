@@ -3,6 +3,9 @@ using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Shows a dialog box with a question mark icon and fields for entering a password and re-entering a password
+    /// </summary>
     public class PasswordCofirmDialogBox : DialogBox
     { 
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
