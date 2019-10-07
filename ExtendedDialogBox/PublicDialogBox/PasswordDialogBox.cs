@@ -20,7 +20,8 @@ namespace ExtendedDialogBox.PublicDialogBox
             get => mDialogBox.PasswordLabel;
             set
             {
-                if (value == mDialogBox.PasswordLabel) return;
+                if (value == mDialogBox.PasswordLabel)
+                    return;
                 
                 mDialogBox.PasswordLabel = value;
             }

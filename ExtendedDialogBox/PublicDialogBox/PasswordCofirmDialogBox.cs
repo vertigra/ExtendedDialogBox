@@ -20,7 +20,8 @@ namespace ExtendedDialogBox.PublicDialogBox
             get => mDialogBox.PasswordLabel;
             set
             {
-                if (value == mDialogBox.PasswordLabel) return;
+                if (value == mDialogBox.PasswordLabel)
+                    return;
 
                 mDialogBox.PasswordLabel = value;
             }
@@ -31,7 +32,8 @@ namespace ExtendedDialogBox.PublicDialogBox
             get => mDialogBox.PasswordConfirmationLabel;
             set
             {
-                if (value == mDialogBox.PasswordConfirmationLabel) return;
+                if (value == mDialogBox.PasswordConfirmationLabel)
+                    return;
 
                 mDialogBox.PasswordConfirmationLabel = value;
             }
