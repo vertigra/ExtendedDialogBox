@@ -6,13 +6,13 @@ namespace ExtendedDialogBoxTest
     [TestClass]
     public class DialogBoxTest
     {
-        [TestMethod]
+        [TestMethod, TestCategory("RunMannualy")]
         public static void TestOkButton()
         {
             new DialogBox("Test").OkButton();
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("RunMannualy")]
         public static void TestOkButtonCustomContent()
         {
             new DialogBox("Test").OkButton("CustomText");
