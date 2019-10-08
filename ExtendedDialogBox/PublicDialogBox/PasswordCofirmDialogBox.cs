@@ -11,13 +11,25 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
         internal override bool IsPasswordWithConfirm => true;
 
+        /// <summary>
+        /// Shows a dialog box with a question mark icon and fields for entering a password and re-entering a password
+        /// </summary>
+        /// <param name="message">Text message</param>
         public PasswordCofirmDialogBox(string message) : base(message)
         {
             mDialogBox.Title = "Enter password";
         }
 
+        /// <summary>
+        /// Shows a dialog box with a question mark icon and fields for entering a password and re-entering a password
+        /// </summary>
+        /// <param name="message">Text message</param>
+        /// <param name="title">Text title</param>
         public PasswordCofirmDialogBox(string message, string title) : base(message, title) { }
 
+        /// <summary>
+        /// Password label text
+        /// </summary>
         public string PasswordLabel
         {
             get => mDialogBox.PasswordLabel;
@@ -30,6 +42,9 @@ namespace ExtendedDialogBox.PublicDialogBox
             }
         }
 
+        /// <summary>
+        /// Password confirmation label text
+        /// </summary>
         public string PasswordConfirmLabel
         {
             get => mDialogBox.PasswordConfirmationLabel;
@@ -42,8 +57,14 @@ namespace ExtendedDialogBox.PublicDialogBox
             }
         }
 
-        public SecureString Password { get => mDialogBox.Password; }
-        public SecureString PasswordConfirmation { get => mDialogBox.PasswordConfirmation; }
+        /// <summary>
+        /// Returns the entered password
+        /// </summary>
+        public SecureString SecurePassword { get => mDialogBox.Password; }
 
+        /// <summary>
+        /// Returns the entered password confirmation
+        /// </summary>
+        public SecureString SecurePasswordConfirmation { get => mDialogBox.PasswordConfirmation; }
     }
 }

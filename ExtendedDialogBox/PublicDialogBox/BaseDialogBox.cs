@@ -3,6 +3,9 @@ using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Base dialog box methods
+    /// </summary>
     public class BaseDialogBox
     {
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
@@ -146,7 +149,11 @@ namespace ExtendedDialogBox.PublicDialogBox
         #endregion
 
         #region YesNoButton
-    
+
+        /// <summary>
+        /// Shows DialogBox with Yes and No buttons
+        /// </summary>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoButton()
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
@@ -156,6 +163,11 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Yes and No buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoButton(string yesButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
@@ -164,7 +176,12 @@ namespace ExtendedDialogBox.PublicDialogBox
             return result;
         }
 
-
+        /// <summary>
+        /// Shows DialogBox with Yes and No buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <param name="noButtonContent">Text replacing the inscription No on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoButton(string yesButtonContent, string noButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
@@ -178,6 +195,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #region YesCancelButton
 
+        /// <summary>
+        /// Shows DialogBox with Yes and Cancel buttons
+        /// </summary>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesCancelButton()
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
@@ -187,6 +208,11 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Yes and Cancel buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesCancelButton(string yesButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
@@ -195,7 +221,12 @@ namespace ExtendedDialogBox.PublicDialogBox
             return result;
         }
 
-
+        /// <summary>
+        /// Shows DialogBox with Yes and Cancel buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <param name="cancelButtonContent">Text replacing the inscription Cancel on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesCancelButton(string yesButtonContent, string cancelButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
@@ -209,6 +240,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #region YesNoCancelButton
 
+        /// <summary>
+        /// Shows DialogBox with Yes, No and Cancel buttons
+        /// </summary>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoCancelButton()
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
@@ -219,29 +254,47 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Yes, No and Cancel buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoCancelButton(string yesButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
-            var result = YesCancelButton();
+            var result = YesNoCancelButton();
 
             return result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Yes, No and Cancel buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <param name="noButtonContent">Text replacing the inscription No on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoCancelButton(string yesButtonContent, string noButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
             mDialogBox.NoButtonLabel = noButtonContent;
-            var result = YesCancelButton();
+            var result = YesNoCancelButton();
 
             return result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Yes, No and Cancel buttons
+        /// </summary>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <param name="noButtonContent">Text replacing the inscription No on the button</param>
+        /// <param name="cancelButtonContent">Text replacing the inscription Cancel on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult YesNoCancelButton(string yesButtonContent, string noButtonContent, string cancelButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
             mDialogBox.NoButtonLabel = noButtonContent;
             mDialogBox.CancelButtonLabel = cancelButtonContent;
-            var result = YesCancelButton();
+            var result = YesNoCancelButton();
 
             return result;
         }
@@ -250,6 +303,10 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #region OkYesNoCancelButton
 
+        /// <summary>
+        /// Shows DialogBox with Ok, Yes, No and Cancel buttons
+        /// </summary>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkYesNoCancelButton()
         {
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
@@ -261,6 +318,11 @@ namespace ExtendedDialogBox.PublicDialogBox
             return Result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok, Yes, No and Cancel buttons 
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription Ok on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkYesNoCancelButton(string okButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
@@ -269,6 +331,12 @@ namespace ExtendedDialogBox.PublicDialogBox
             return result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok, Yes, No and Cancel buttons 
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription Ok on the button</param>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkYesNoCancelButton(string okButtonContent, string yesButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
@@ -278,6 +346,13 @@ namespace ExtendedDialogBox.PublicDialogBox
             return result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok, Yes, No and Cancel buttons 
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription Ok on the button</param>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <param name="noButtonContent">Text replacing the inscription No on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkYesNoCancelButton(string okButtonContent, string yesButtonContent, string noButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
@@ -288,6 +363,14 @@ namespace ExtendedDialogBox.PublicDialogBox
             return result;
         }
 
+        /// <summary>
+        /// Shows DialogBox with Ok, Yes, No and Cancel buttons 
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription Ok on the button</param>
+        /// <param name="yesButtonContent">Text replacing the inscription Yes on the button</param>
+        /// <param name="noButtonContent">Text replacing the inscription No on the button</param>
+        /// <param name="cancelButtonContent">Text replacing the inscription Cancel on the button</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkYesNoCancelButton(string okButtonContent, string yesButtonContent, string noButtonContent, string cancelButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
