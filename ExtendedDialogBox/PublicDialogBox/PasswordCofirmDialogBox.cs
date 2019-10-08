@@ -60,11 +60,31 @@ namespace ExtendedDialogBox.PublicDialogBox
         /// <summary>
         /// Returns the entered password
         /// </summary>
-        public SecureString SecurePassword { get => mDialogBox.SecurePassword; }
+        public string Password => mDialogBox.Password;
 
         /// <summary>
         /// Returns the entered password confirmation
         /// </summary>
-        public SecureString SecurePasswordConfirmation { get => mDialogBox.SecurePasswordConfirmation; }
+        public string PasswordConfirmation => mDialogBox.PasswordConfirmation;
+
+        /// <summary>
+        /// Returns the entered password
+        /// </summary>
+        public SecureString SecurePassword => mDialogBox.SecurePassword;
+
+        /// <summary>
+        /// Returns the entered password confirmation
+        /// </summary>
+        public SecureString SecurePasswordConfirmation => mDialogBox.SecurePasswordConfirmation;
+
+        /// <summary>
+        /// Clears password entry field
+        /// </summary>
+        public void ClearPassword() => mDialogBox.ClearPasswordBox();
+
+        /// <summary>
+        /// Clears password confirmation entry field
+        /// </summary>
+        public void ClearPasswordConfirmation() => mDialogBox.ClearPasswordConfirmationBox();
     }
 }
