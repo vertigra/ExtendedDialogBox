@@ -19,6 +19,9 @@ namespace ExtendedDialogBox
             MessageImage = image;
         }
 
+        /// <summary>
+        /// Deleted icons if MessageBoxImage = MessageBoxImage.None; 
+        /// </summary>
         protected override void OnSourceInitialized(EventArgs e)
         {
             if (MessageImage == MessageBoxImage.None)
@@ -280,7 +283,6 @@ namespace ExtendedDialogBox
         private Icon dialogBoxIcon;
         private Icon DialogBoxIcon
         {
-            get { return dialogBoxIcon; }
             set
             {
                 dialogBoxIcon = value;
@@ -327,9 +329,12 @@ namespace ExtendedDialogBox
 
         #region InputBox Password and PasswordConfirm
 
-        internal SecureString Password => PasswordInputBox.SecurePassword;
-        internal SecureString PasswordConfirmation => PasswordConfirmationInputBox.SecurePassword;
-        
+        internal SecureString SecurePassword => PasswordInputBox.SecurePassword;
+        internal SecureString SecurePasswordConfirmation => PasswordConfirmationInputBox.SecurePassword;
+
+        internal string Password => PasswordInputBox.Password;
+        internal string PasswordConfirmation => PasswordConfirmationInputBox.Password;
+
         internal void ClearPasswordBox()
         {
             PasswordInputBox.Clear();
