@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedDialogBox", "Extend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedDialogBoxApp", "ExtendedDialogBoxApp\ExtendedDialogBoxApp.csproj", "{68B18826-1CE9-4AFA-8507-65BCCE387FDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtendedDialogBoxTest", "ExtendedDialogBoxTest\ExtendedDialogBoxTest.csproj", "{ACF5984A-70BD-4BA3-9BB6-0CD046B9DBD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68B18826-1CE9-4AFA-8507-65BCCE387FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF5984A-70BD-4BA3-9BB6-0CD046B9DBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF5984A-70BD-4BA3-9BB6-0CD046B9DBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF5984A-70BD-4BA3-9BB6-0CD046B9DBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF5984A-70BD-4BA3-9BB6-0CD046B9DBD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
