@@ -3,6 +3,9 @@ using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
 {
+    /// <summary>
+    /// Base dialog box methods
+    /// </summary>
     public class BaseDialogBox
     {
         internal virtual MessageBoxImage DialogBoxImage { get => MessageBoxImage.None; }
@@ -259,7 +262,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public MessageBoxResult YesNoCancelButton(string yesButtonContent)
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
-            var result = YesCancelButton();
+            var result = YesNoCancelButton();
 
             return result;
         }
@@ -274,7 +277,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         {
             mDialogBox.YesButtonLabel = yesButtonContent;
             mDialogBox.NoButtonLabel = noButtonContent;
-            var result = YesCancelButton();
+            var result = YesNoCancelButton();
 
             return result;
         }
@@ -291,7 +294,7 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.YesButtonLabel = yesButtonContent;
             mDialogBox.NoButtonLabel = noButtonContent;
             mDialogBox.CancelButtonLabel = cancelButtonContent;
-            var result = YesCancelButton();
+            var result = YesNoCancelButton();
 
             return result;
         }

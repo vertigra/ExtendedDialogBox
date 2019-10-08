@@ -62,16 +62,16 @@ namespace ExtendedDialogBoxApp.ViewModel
                            if (dialogType is PasswordDialogBox passwordDialog)
                            {
                                ResultsTextBlockAdd("Password.ToUnsecureString() returns",
-                               passwordDialog.Password.ToUnsecureString());
+                               passwordDialog.SecurePassword.ToUnsecureString());
                            }
 
                            if (dialogType is PasswordCofirmDialogBox passwordCofirmDialog)
                            {
                                ResultsTextBlockAdd("Password.ToUnsecureString() returns",
-                                   passwordCofirmDialog.Password.ToUnsecureString());
+                                   passwordCofirmDialog.SecurePassword.ToUnsecureString());
 
                                ResultsTextBlockAdd("PasswordConfirmation.ToUnsecureString() returns",
-                                   passwordCofirmDialog.PasswordConfirmation.ToUnsecureString());
+                                   passwordCofirmDialog.SecurePasswordConfirmation.ToUnsecureString());
                            }
                        }));
             }

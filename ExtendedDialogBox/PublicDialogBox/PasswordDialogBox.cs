@@ -11,13 +11,25 @@ namespace ExtendedDialogBox.PublicDialogBox
         internal override MessageBoxImage DialogBoxImage => MessageBoxImage.Question;
         internal override bool IsPasswordBox => true;
 
+        /// <summary>
+        /// Shows a dialog box with a question mark icon and password fields.
+        /// </summary>
+        /// <param name="message">Text message</param>
         public PasswordDialogBox(string message) : base(message)
         {
             mDialogBox.Title = "Enter password";
         }
 
+        /// <summary>
+        /// Shows a dialog box with a question mark icon and password fields.
+        /// </summary>
+        /// <param name="message">Text message</param>
+        /// <param name="title">Text title</param>
         public PasswordDialogBox(string message, string title) : base (message, title) { }
 
+        /// <summary>
+        /// Password confirmation label text
+        /// </summary>
         public string PasswordLabel
         {
             get => mDialogBox.PasswordLabel;
@@ -30,7 +42,10 @@ namespace ExtendedDialogBox.PublicDialogBox
             }
         }
 
-        public SecureString Password { get => mDialogBox.Password; }
+        /// <summary>
+        /// Returns the entered password
+        /// </summary>
+        public SecureString SecurePassword { get => mDialogBox.Password; }
 
 
     }
