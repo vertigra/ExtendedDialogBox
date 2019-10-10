@@ -7,7 +7,7 @@ namespace ExtendedDialogBoxTest
     [TestClass]
     public class QuestionDialogBoxTest
     {
-        [TestMethod]
+        [TestMethod, TestCategory("RunMannualy")]
         public void TestYesNoCancelButtonWithCustomContent()
         {
             var result = new QuestionDialogBox("Text message").YesNoCancelButton("CusutomYes", "CustomNo", "CustomCancel");

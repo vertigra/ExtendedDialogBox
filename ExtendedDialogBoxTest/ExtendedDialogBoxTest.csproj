@@ -59,6 +59,7 @@
     <Compile Include="DialogBoxTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionDialogBoxTest.cs" />
+    <Compile Include="PasswordDialogBoxTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

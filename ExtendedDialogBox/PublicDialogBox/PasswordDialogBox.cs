@@ -45,8 +45,16 @@ namespace ExtendedDialogBox.PublicDialogBox
         /// <summary>
         /// Returns the entered password
         /// </summary>
-        public SecureString SecurePassword { get => mDialogBox.Password; }
+        public string Password => mDialogBox.Password;
 
+        /// <summary>
+        /// Returns the entered password
+        /// </summary>
+        public SecureString SecurePassword=> mDialogBox.SecurePassword;
 
+        /// <summary>
+        /// Clears password entry field
+        /// </summary>
+        public void ClearPassword() => mDialogBox.ClearPasswordBox();
     }
 }
