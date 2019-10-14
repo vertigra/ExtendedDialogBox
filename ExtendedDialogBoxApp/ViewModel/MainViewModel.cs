@@ -82,9 +82,9 @@ namespace ExtendedDialogBoxApp.ViewModel
         private void ResultsTextBlockAdd(string title, string message)
         {
             if (ResultTextBlock.Length == 0)
-                ResultTextBlock = $"{title}: {message}";
+                ResultTextBlock = $"{title}:\n {message}";
             else
-                ResultTextBlock += $"\n{title}: {message}";
+                ResultTextBlock += $"\n{title}:\n {message}";
         }
 
         #endregion
