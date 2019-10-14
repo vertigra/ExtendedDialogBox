@@ -8,7 +8,7 @@ namespace ExtendedDialogBox.Utils
     /// <summary>
     /// Remove icons from dialog box.
     /// 
-    /// Author <see cref="https://www.wpftutorial.net/RemoveIcon.html">How to remove the icon of a WPF window</see>
+    /// Author <see href="https://www.wpftutorial.net/RemoveIcon.html">How to remove the icon of a WPF window</see>
     /// </summary>
     internal static class IconHelper
     {
