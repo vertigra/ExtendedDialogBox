@@ -59,8 +59,9 @@
     <Compile Include="PublicDialogBox\PasswordCofirmDialogBox.cs" />
     <Compile Include="PublicDialogBox\PasswordDialogBox.cs" />
     <Compile Include="PublicDialogBox\WarningDialogBox.cs" />
-    <Compile Include="Utils\Extension.cs" />
+    <Compile Include="Utils\Extension\ImageExtension.cs" />
     <Compile Include="PublicDialogBox\QuestionDialogBox.cs" />
+    <Compile Include="Utils\Extension\FocusExtension.cs" />
     <Compile Include="Utils\IconHeleper.cs" />
     <Page Include="DialogBoxWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

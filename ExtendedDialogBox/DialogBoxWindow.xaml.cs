@@ -9,7 +9,7 @@ using System.Windows.Media;
 namespace ExtendedDialogBox
 {
 
-    partial class DialogBoxWindow
+    partial class DialogBoxWindow 
     {
         internal DialogBoxWindow(MessageBoxImage image)
         {
@@ -46,7 +46,34 @@ namespace ExtendedDialogBox
             //default contetnt for password box label
             PasswordLabel = "Password";
             PasswordConfirmationLabel = "Password Confirm";
+
+            IsOkFocused = true;
+            IsYesFocused = true;
         }
+
+        #region Focused
+        
+        internal bool IsOkFocused
+        {
+            get { return (bool)GetValue(IsOkFocusedProperty); }
+            set { SetValue(IsOkFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsOkFocusedProperty =
+            DependencyProperty.Register(nameof(IsOkFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        internal bool IsYesFocused
+        {
+            get { return (bool)GetValue(IsYesFocusedProperty); }
+            set { SetValue(IsYesFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsYesFocusedProperty =
+            DependencyProperty.Register(nameof(IsYesFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        #endregion
 
         #region Button Visiblity
 

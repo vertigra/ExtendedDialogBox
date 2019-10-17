@@ -6,7 +6,7 @@ using System.Windows.Media.Imaging;
 
 namespace ExtendedDialogBox.Utils
 {
-    internal static class Extension
+    internal static class ImageExtension
     {
         internal static ImageSource ToImageSource(this Icon icon)
         {
