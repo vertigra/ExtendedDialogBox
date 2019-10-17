@@ -1,4 +1,5 @@
 ﻿using ExtendedDialogBox.Command;
+using ExtendedDialogBox.Enum;
 using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
@@ -73,16 +74,57 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #endregion
 
+        #region Focused
+
+        private Focused focused = Focused.None;
+        public Focused Focused
+        {
+            get { return focused; }
+            set
+            {
+                focused = value;
+
+                switch (focused)
+                {
+                    case Focused.CancelButton:
+                        mDialogBox.IsCancelFocused = true;
+                        break;
+                    case Focused.NoButton:
+                        mDialogBox.IsNoFocused = true;
+                        break;
+                    case Focused.OkButton:
+                        mDialogBox.IsOkFocused = true;
+                        break;
+                    case Focused.YesButton:
+                        mDialogBox.IsYesFocused = true;
+                        break;
+                    case Focused.None:
+                        mDialogBox.IsCancelFocused = false;
+                        mDialogBox.IsNoFocused = false;
+                        mDialogBox.IsOkFocused = false;
+                        mDialogBox.IsYesFocused = false;
+                        break;
+                }
+            }
+        }
+
+        #endregion
+
         #region OkButton
 
+        private void OkButtonShowDialog()
+        {
+            mDialogBox.OkButtonVisiblity = Visibility.Visible;
+            mDialogBox.ShowDialog();
+        }
         /// <summary>
         /// Shows DialogBox with Ok button
         /// </summary>
         /// <returns>MessageBoxResult with the result of the pressed button</returns>
         public MessageBoxResult OkButton()
         {
-            mDialogBox.OkButtonVisiblity = Visibility.Visible;
-            mDialogBox.ShowDialog();
+            Focused = Focused.OkButton;
+            OkButtonShowDialog();
 
             return Result;
         }
@@ -95,10 +137,40 @@ namespace ExtendedDialogBox.PublicDialogBox
         public MessageBoxResult OkButton(string okButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
-            var result = OkButton();
+            Focused = Focused.OkButton;
+            OkButtonShowDialog();
 
-            return result;
+            return Result;
         }
+
+        /// <summary>
+        /// Shows DialogBox with Ok button
+        /// </summary>
+        /// <param name="focusedButton">The button on which will focus</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
+        public MessageBoxResult OkButton(Focused focusedButton)
+        {
+            Focused = focusedButton;
+            OkButtonShowDialog();
+
+            return Result;
+        }
+
+        /// <summary>
+        /// Shows DialogBox with Ok button
+        /// </summary>
+        /// <param name="okButtonContent">Text replacing the inscription OK on the button</param>
+        /// <param name="focusedButton">The button on which will focus</param>
+        /// <returns>MessageBoxResult with the result of the pressed button</returns>
+        public MessageBoxResult OkButton(string okButtonContent, Focused focusedButton)
+        {
+            mDialogBox.OkButtonLabel = okButtonContent;
+            Focused = focusedButton;
+            OkButtonShowDialog();
+
+            return Result;
+        }
+
 
         #endregion
 

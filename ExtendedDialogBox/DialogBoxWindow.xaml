@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+        xmlns:local="clr-namespace:ExtendedDialogBox.Utils.Extension"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         mc:Ignorable="d" 
@@ -15,8 +16,7 @@
         TextOptions.TextRenderingMode="ClearType" 
         UseLayoutRounding="True"
         Icon="{Binding WindowTitleIcon, ElementName=dialogBoxWindow}"       
-        MinHeight="155" MinWidth="154" Height="Auto" Width="Auto"
-        xmlns:local="clr-namespace:ExtendedDialogBox.Utils.Extension">
+        MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />

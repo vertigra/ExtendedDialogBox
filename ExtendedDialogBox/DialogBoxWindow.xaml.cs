@@ -1,4 +1,5 @@
 ﻿using ExtendedDialogBox.Command;
+using ExtendedDialogBox.Enum;
 using ExtendedDialogBox.Utils;
 using System;
 using System.Drawing;
@@ -9,7 +10,7 @@ using System.Windows.Media;
 namespace ExtendedDialogBox
 {
 
-    partial class DialogBoxWindow 
+    partial class DialogBoxWindow : Window
     {
         internal DialogBoxWindow(MessageBoxImage image)
         {
@@ -46,13 +47,30 @@ namespace ExtendedDialogBox
             //default contetnt for password box label
             PasswordLabel = "Password";
             PasswordConfirmationLabel = "Password Confirm";
-
-            IsOkFocused = true;
-            IsYesFocused = true;
         }
 
         #region Focused
-        
+
+        internal bool IsCancelFocused
+        {
+            get { return (bool)GetValue(IsCancelFocusedProperty); }
+            set { SetValue(IsCancelFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsCancelFocusedProperty =
+            DependencyProperty.Register(nameof(IsCancelFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        internal bool IsNoFocused
+        {
+            get { return (bool)GetValue(IsNoFocusedProperty); }
+            set { SetValue(IsNoFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsNoFocusedProperty =
+            DependencyProperty.Register(nameof(IsNoFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
         internal bool IsOkFocused
         {
             get { return (bool)GetValue(IsOkFocusedProperty); }

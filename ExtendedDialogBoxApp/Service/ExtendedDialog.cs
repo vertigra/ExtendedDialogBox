@@ -1,5 +1,5 @@
-﻿using ExtendedDialogBox.PublicDialogBox;
-using System.Collections.Generic;
+﻿using ExtendedDialogBox.Enum;
+using ExtendedDialogBox.PublicDialogBox;
 
 namespace ExtendedDialogBoxApp
 {
@@ -19,7 +19,7 @@ namespace ExtendedDialogBoxApp
             string result = "No result";
 
             if (dialogButtonType == "Ok")
-                result = mDialogBox.OkButton().ToString();
+                result = mDialogBox.OkButton("hjk").ToString();
 
             if (dialogButtonType == "OkCancel")
                 result = mDialogBox.OkCancelButton().ToString();

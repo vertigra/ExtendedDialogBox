@@ -52,6 +52,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\Focused.cs" />
     <Compile Include="PublicDialogBox\BaseDialogBox.cs" />
     <Compile Include="PublicDialogBox\DialogBox.cs" />
     <Compile Include="PublicDialogBox\ErrorDialogBox.cs" />
