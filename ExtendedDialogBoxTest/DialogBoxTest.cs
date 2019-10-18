@@ -1,4 +1,5 @@
-﻿using ExtendedDialogBox.PublicDialogBox;
+﻿using ExtendedDialogBox.Enum;
+using ExtendedDialogBox.PublicDialogBox;
 using NUnit.Framework;
 using System.Windows;
 
@@ -17,8 +18,8 @@ namespace ExtendedDialogBoxTest
         [Test, Explicit]
         public static void TestOkButtonCustomContent()
         {
-            DialogBox dialog = new DialogBox("Test");
-            MessageBoxResult result =  dialog.OkButton("CustomText");
+            DialogBox dialog = new DialogBox("Test") { Focused = Focused.OkButton};
+            MessageBoxResult result =  dialog.OkButton();
 
             Assert.AreEqual(MessageBoxResult.OK, result);
         }

@@ -47,6 +47,10 @@ namespace ExtendedDialogBox
             //default contetnt for password box label
             PasswordLabel = "Password";
             PasswordConfirmationLabel = "Password Confirm";
+
+            //must be zero by default, otherwise focus will be on it
+            //IsFormFocused = null;
+            //IsNoFocused = false;
         }
 
         #region Focused
@@ -87,9 +91,30 @@ namespace ExtendedDialogBox
             set { SetValue(IsYesFocusedProperty, value); }
         }
 
+        private static readonly DependencyProperty IsPasswordBoxFocusedProperty =
+            DependencyProperty.Register(nameof(IsPasswordBoxFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
         private static readonly DependencyProperty IsYesFocusedProperty =
             DependencyProperty.Register(nameof(IsYesFocused), typeof(bool),
                 typeof(DialogBoxWindow), null);
+        
+        internal bool IsPasswordBoxFocused
+        {
+            get { return (bool)GetValue(IsPasswordBoxFocusedProperty); }
+            set { SetValue(IsPasswordBoxFocusedProperty, value); }
+        }
+
+        internal bool? IsFormFocused
+        {
+            get { return (bool?)GetValue(IsFormFocusedProperty); }
+            set { SetValue(IsFormFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsFormFocusedProperty =
+            DependencyProperty.Register(nameof(IsFormFocused), typeof(bool?),
+                typeof(DialogBoxWindow), null);
+
 
         #endregion
 

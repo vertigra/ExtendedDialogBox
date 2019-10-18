@@ -19,7 +19,7 @@ namespace ExtendedDialogBoxApp
             string result = "No result";
 
             if (dialogButtonType == "Ok")
-                result = mDialogBox.OkButton("hjk").ToString();
+                result = mDialogBox.OkButton().ToString();
 
             if (dialogButtonType == "OkCancel")
                 result = mDialogBox.OkCancelButton().ToString();

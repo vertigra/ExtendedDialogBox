@@ -4,6 +4,7 @@ using System.Windows;
 
 namespace ExtendedDialogBoxTest
 {
+    [TestFixture, RequiresSTA]
     public class QuestionDialogBoxTest
     {
         [Test]

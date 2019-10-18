@@ -15,7 +15,8 @@
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType" 
         UseLayoutRounding="True"
-        Icon="{Binding WindowTitleIcon, ElementName=dialogBoxWindow}"       
+        Icon="{Binding WindowTitleIcon, ElementName=dialogBoxWindow}"
+        local:FocusExtension.IsFocused="{Binding IsFormFocused, ElementName=dialogBoxWindow}"
         MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
@@ -72,7 +73,8 @@
                          Width="Auto"
                          VerticalAlignment="Center"
                          Margin="10 0 10 10"
-                         TextBlock.TextAlignment="Right"/>
+                         TextBlock.TextAlignment="Right"
+                         local:FocusExtension.IsFocused="{Binding IsPasswordBoxFocused, ElementName=dialogBoxWindow}"/>
 
             <Label Grid.Column="0"
                    Grid.Row="1"

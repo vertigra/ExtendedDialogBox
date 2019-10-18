@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace ExtendedDialogBoxTest
 {
-    [TestFixture]
+    [TestFixture, RequiresSTA]
     public class PasswordDialogBoxTest
     {
         [Test, Explicit]

@@ -25,7 +25,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         /// </summary>
         /// <param name="message">Text message</param>
         /// <param name="title">Text title</param>
-        public PasswordDialogBox(string message, string title) : base (message, title) { }
+        public PasswordDialogBox(string message, string title) : base (message, title) {}
 
         /// <summary>
         /// Password confirmation label text

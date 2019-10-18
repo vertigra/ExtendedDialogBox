@@ -1,4 +1,5 @@
-﻿using ExtendedDialogBox.PublicDialogBox;
+﻿using ExtendedDialogBox.Enum;
+using ExtendedDialogBox.PublicDialogBox;
 using ExtendedDialogBoxApp.Utils;
 using ExtendedDialogBoxAppCommand;
 using System.ComponentModel;
