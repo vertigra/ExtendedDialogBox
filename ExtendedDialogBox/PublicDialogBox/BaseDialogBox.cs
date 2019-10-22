@@ -126,8 +126,8 @@ namespace ExtendedDialogBox.PublicDialogBox
         public MessageBoxResult OkButton()
         {
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
-            
-            if(focused == null)
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
                 Focused = Focused.OkButton;
             
             mDialogBox.ShowDialog();
@@ -211,7 +211,7 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
 
-            if (focused == null)
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
                 Focused = Focused.YesButton;
 
             mDialogBox.ShowDialog();
@@ -259,8 +259,8 @@ namespace ExtendedDialogBox.PublicDialogBox
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
-            
-            if (focused == null)
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
                 Focused = Focused.YesButton;
 
             mDialogBox.ShowDialog();
@@ -310,7 +310,7 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
 
-            if (focused == null)
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
                 Focused = Focused.YesButton;
 
             mDialogBox.ShowDialog();
@@ -378,7 +378,7 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
 
-            if (focused == null)
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
                 Focused = Focused.OkButton;
 
             mDialogBox.ShowDialog();

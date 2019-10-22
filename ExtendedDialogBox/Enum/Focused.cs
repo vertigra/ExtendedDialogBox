@@ -25,6 +25,6 @@
         /// <summary>
         /// Set focus to Cancel button
         /// </summary>
-        CancelButton,
+        CancelButton
     }
 }

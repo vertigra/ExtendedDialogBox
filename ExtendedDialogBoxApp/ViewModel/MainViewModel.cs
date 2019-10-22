@@ -1,5 +1,4 @@
-﻿using ExtendedDialogBox.Enum;
-using ExtendedDialogBox.PublicDialogBox;
+﻿using ExtendedDialogBox.PublicDialogBox;
 using ExtendedDialogBoxApp.Utils;
 using ExtendedDialogBoxAppCommand;
 using System.ComponentModel;
@@ -13,6 +12,7 @@ namespace ExtendedDialogBoxApp.ViewModel
         private RelayCommand showDialogBox;
         private string DialogButtonType { get; set; } = "Ok";
         private string DialogType { get; set; } = "NoIcons";
+        private string Focused { get; set; } = "Default";
 
         public RelayCommand ShowDialogBox
         {
@@ -28,7 +28,7 @@ namespace ExtendedDialogBoxApp.ViewModel
                            if (dialogType == null)
                                MessageBox.Show("Not defined dialog type");
 
-                           ExtendedDialog dialog = new ExtendedDialog(dialogType);
+                           ExtendedDialog dialog = new ExtendedDialog(dialogType, Focused);
                            string result = null;
 
                            if (IsCustomContentUse)
@@ -48,7 +48,7 @@ namespace ExtendedDialogBoxApp.ViewModel
                                };
                                
                                
-                               dialog = new ExtendedDialog(dialogType);
+                               dialog = new ExtendedDialog(dialogType, Focused);
                                result = dialog.ShowDialog(DialogButtonType, contents, labels);
                            }
                            else
@@ -58,20 +58,20 @@ namespace ExtendedDialogBoxApp.ViewModel
                                MessageBox.Show("No result exception");
 
                            
-                           ResultsTextBlockAdd("ButtonResult returns", result);
+                           ResultsTextBlockAdd("ButtonResult return", result);
 
                            if (dialogType is PasswordDialogBox passwordDialog)
                            {
-                               ResultsTextBlockAdd("Password.ToUnsecureString() returns",
+                               ResultsTextBlockAdd("Password.ToUnsecureString()\nreturn",
                                passwordDialog.SecurePassword.ToUnsecureString());
                            }
 
                            if (dialogType is PasswordCofirmDialogBox passwordCofirmDialog)
                            {
-                               ResultsTextBlockAdd("Password.ToUnsecureString() returns",
+                               ResultsTextBlockAdd("Password.ToUnsecureString()\nreturn",
                                    passwordCofirmDialog.SecurePassword.ToUnsecureString());
 
-                               ResultsTextBlockAdd("PasswordConfirmation.ToUnsecureString() returns",
+                               ResultsTextBlockAdd("PasswordConfirmation.ToUnsecureString()\nreturn",
                                    passwordCofirmDialog.SecurePasswordConfirmation.ToUnsecureString());
                            }
                        }));
@@ -83,9 +83,9 @@ namespace ExtendedDialogBoxApp.ViewModel
         private void ResultsTextBlockAdd(string title, string message)
         {
             if (ResultTextBlock.Length == 0)
-                ResultTextBlock = $"{title}:\n {message}";
+                ResultTextBlock = $"{title}:\n{message}";
             else
-                ResultTextBlock += $"\n{title}:\n {message}";
+                ResultTextBlock += $"\n{title}:\n{message}";
         }
 
         #endregion
@@ -168,6 +168,15 @@ namespace ExtendedDialogBoxApp.ViewModel
             DialogType = "PasswordConfirm";
         });
 
+        public RelayCommand SetFocusOn => new RelayCommand(obj =>
+        {
+            string param = obj as string;
+
+            Focused = param;
+            
+        });
+
+       
         #endregion
 
         #region SelectDialogType
@@ -176,24 +185,24 @@ namespace ExtendedDialogBoxApp.ViewModel
         {
             if (DialogType.Equals("NoIcons"))
                 return new DialogBox("Any text message", "Title");
-
-            if(DialogType.Equals("Question"))
-                return new QuestionDialogBox("Question?");
+            
+            if (DialogType.Equals("Question"))
+                return new QuestionDialogBox("Question?") { };
 
             if (DialogType.Equals("Warning"))
-                return new WarningDialogBox("Warning!");
+                return new WarningDialogBox("Warning!") { };
 
             if (DialogType.Equals("Information"))
-                return new InformationDialogBox("Information");
+                return new InformationDialogBox("Information") { };
 
             if (DialogType.Equals("Error"))
-                return new ErrorDialogBox("Error");
+                return new ErrorDialogBox("Error") { };
 
             if (DialogType.Equals("Password"))
-                return new PasswordDialogBox("Enter password");
+                return new PasswordDialogBox("Enter password") { };
 
             if (DialogType.Equals("PasswordConfirm"))
-                return new PasswordCofirmDialogBox("Enter password");
+                return new PasswordCofirmDialogBox("Enter password") { };
 
             return null;
         }

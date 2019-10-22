@@ -9,9 +9,21 @@ namespace ExtendedDialogBoxApp
     class ExtendedDialog
     {
         private DialogBox mDialogBox;
-        internal ExtendedDialog(DialogBox DialogBox)
+        internal ExtendedDialog(DialogBox DialogBox, string focused)
         {
             mDialogBox = DialogBox;
+
+            if (focused.Equals("None"))
+                mDialogBox.Focused = Focused.None;
+            if (focused.Equals("OkButton"))
+                mDialogBox.Focused = Focused.OkButton;
+            if (focused.Equals("YesButton"))
+                mDialogBox.Focused = Focused.YesButton;
+            if (focused.Equals("NoButton"))
+                mDialogBox.Focused = Focused.NoButton;
+            if (focused.Equals("CancelButton"))
+                mDialogBox.Focused = Focused.CancelButton;
+
         }
 
         internal string ShowDialog(string dialogButtonType)
