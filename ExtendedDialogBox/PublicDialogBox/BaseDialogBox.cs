@@ -1,4 +1,5 @@
 ﻿using ExtendedDialogBox.Command;
+using ExtendedDialogBox.Enum;
 using System.Windows;
 
 namespace ExtendedDialogBox.PublicDialogBox
@@ -29,6 +30,12 @@ namespace ExtendedDialogBox.PublicDialogBox
 
             if (IsPasswordWithConfirm)
                 mDialogBox.PasswordBoxesGridVisiblity = Visibility.Visible;
+
+            if (IsPasswordBox || IsPasswordWithConfirm)
+            {
+                mDialogBox.IsPasswordBoxFocused = true;
+            }
+                
         }
 
         #region Command
@@ -73,8 +80,45 @@ namespace ExtendedDialogBox.PublicDialogBox
 
         #endregion
 
-        #region OkButton
+        #region Focused
 
+        private Focused? focused = null;
+
+        /// <summary>
+        /// Allows you to set focus on the desired element in the dialog box.
+        /// </summary>
+        public Focused Focused
+        {
+            set
+            {
+                focused = value;
+                if (focused == null) return;
+
+                switch (focused)
+                {
+                    case Focused.CancelButton:
+                        mDialogBox.IsCancelFocused = true;
+                        break;
+                    case Focused.NoButton:
+                        mDialogBox.IsNoFocused = true;
+                        break;
+                    case Focused.OkButton:
+                        mDialogBox.IsOkFocused = true;
+                        break;
+                    case Focused.YesButton:
+                        mDialogBox.IsYesFocused = true;
+                        break;
+                    case Focused.None:
+                        mDialogBox.IsFormFocused = true;
+                        break;
+                }
+            }
+        }
+
+        #endregion
+
+        #region OkButton
+        
         /// <summary>
         /// Shows DialogBox with Ok button
         /// </summary>
@@ -82,6 +126,10 @@ namespace ExtendedDialogBox.PublicDialogBox
         public MessageBoxResult OkButton()
         {
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
+                Focused = Focused.OkButton;
+            
             mDialogBox.ShowDialog();
 
             return Result;
@@ -95,7 +143,7 @@ namespace ExtendedDialogBox.PublicDialogBox
         public MessageBoxResult OkButton(string okButtonContent)
         {
             mDialogBox.OkButtonLabel = okButtonContent;
-            var result = OkButton();
+            MessageBoxResult result = OkButton();
 
             return result;
         }
@@ -112,6 +160,10 @@ namespace ExtendedDialogBox.PublicDialogBox
         {
             mDialogBox.OkButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
+                Focused = Focused.OkButton;
+
             mDialogBox.ShowDialog();
 
             return Result;
@@ -158,6 +210,10 @@ namespace ExtendedDialogBox.PublicDialogBox
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
+                Focused = Focused.YesButton;
+
             mDialogBox.ShowDialog();
 
             return Result;
@@ -203,6 +259,10 @@ namespace ExtendedDialogBox.PublicDialogBox
         {
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
+                Focused = Focused.YesButton;
+
             mDialogBox.ShowDialog();
 
             return Result;
@@ -249,6 +309,10 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
+                Focused = Focused.YesButton;
+
             mDialogBox.ShowDialog();
 
             return Result;
@@ -313,6 +377,10 @@ namespace ExtendedDialogBox.PublicDialogBox
             mDialogBox.YesButtonVisiblity = Visibility.Visible;
             mDialogBox.NoButtonVisiblity = Visibility.Visible;
             mDialogBox.CancelButtonVisiblity = Visibility.Visible;
+
+            if (focused == null && !IsPasswordBox && !IsPasswordWithConfirm)
+                Focused = Focused.OkButton;
+
             mDialogBox.ShowDialog();
 
             return Result;

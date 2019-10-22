@@ -23,6 +23,6 @@ namespace ExtendedDialogBox.PublicDialogBox
         /// </summary>
         /// <param name="message">Text message</param>
         /// <param name="title">Text title</param>
-        public ErrorDialogBox(string message, string title) : base(message, title) {}
+        public ErrorDialogBox(string message, string title) : base (message, title) {}
     }
 }

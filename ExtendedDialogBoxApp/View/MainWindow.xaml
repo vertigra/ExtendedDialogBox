@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="DialogBox Tester" Height="550" Width="800">
+        Title="DialogBox Tester" Height="550" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -125,6 +125,23 @@
             </StackPanel>
         </GroupBox>
 
+        <GroupBox Grid.Row="1" Grid.Column="3" Header="Set focus on" VerticalAlignment="Top" Margin="5">
+            <StackPanel Margin="5">
+                <RadioButton Width="150" Height="Auto" Content="Default" VerticalContentAlignment="Center" 
+                                 Command="{Binding SetFocusOn}" CommandParameter="Default" GroupName="setFocus" IsChecked="True"/>
+                <RadioButton Width="150" Height="Auto" Content="None" VerticalContentAlignment="Center" 
+                                 Command="{Binding SetFocusOn}" CommandParameter="None" GroupName="setFocus"/>
+                <RadioButton Width="150" Height="Auto" Content="Ok Button" VerticalContentAlignment="Center" 
+                                 Command="{Binding SetFocusOn}" CommandParameter="OkButton" GroupName="setFocus"/>
+                <RadioButton Width="150" Height="Auto" Content="Yes Button" VerticalContentAlignment="Center"
+                                 Command="{Binding SetFocusOn}" CommandParameter="YesButton" GroupName="setFocus"/>
+                <RadioButton Width="150" Height="Auto" Content="No Button" VerticalContentAlignment="Center" 
+                                 Command="{Binding SetFocusOn}" CommandParameter="NoButton" GroupName="setFocus"/>
+                <RadioButton Width="150" Height="Auto" Content="Cancel Button" VerticalContentAlignment="Center"
+                                 Command="{Binding SetFocusOn}" CommandParameter="CancelButton" GroupName="setFocus"/>
+            </StackPanel>
+        </GroupBox>
+
         <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -169,7 +186,7 @@
         </Grid>
         
         <GroupBox Header="Result" Grid.Row="2" Grid.Column="3"  Margin="5" Grid.RowSpan="2">
-            <TextBox IsReadOnly="True" Text="{Binding ResultTextBlock}" Margin="10"/>
+            <TextBox IsReadOnly="True" Text="{Binding ResultTextBlock}" Margin="5"/>
         </GroupBox>
     </Grid>
 </Window>

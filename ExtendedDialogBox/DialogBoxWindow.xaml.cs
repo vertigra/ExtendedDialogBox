@@ -1,4 +1,5 @@
 ﻿using ExtendedDialogBox.Command;
+using ExtendedDialogBox.Enum;
 using ExtendedDialogBox.Utils;
 using System;
 using System.Drawing;
@@ -9,7 +10,7 @@ using System.Windows.Media;
 namespace ExtendedDialogBox
 {
 
-    partial class DialogBoxWindow
+    partial class DialogBoxWindow : Window
     {
         internal DialogBoxWindow(MessageBoxImage image)
         {
@@ -46,7 +47,76 @@ namespace ExtendedDialogBox
             //default contetnt for password box label
             PasswordLabel = "Password";
             PasswordConfirmationLabel = "Password Confirm";
+
+            //must be zero by default, otherwise focus will be on it
+            //IsFormFocused = null;
+            //IsNoFocused = false;
         }
+
+        #region Focused
+
+        internal bool IsCancelFocused
+        {
+            get { return (bool)GetValue(IsCancelFocusedProperty); }
+            set { SetValue(IsCancelFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsCancelFocusedProperty =
+            DependencyProperty.Register(nameof(IsCancelFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        internal bool IsNoFocused
+        {
+            get { return (bool)GetValue(IsNoFocusedProperty); }
+            set { SetValue(IsNoFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsNoFocusedProperty =
+            DependencyProperty.Register(nameof(IsNoFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        internal bool IsOkFocused
+        {
+            get { return (bool)GetValue(IsOkFocusedProperty); }
+            set { SetValue(IsOkFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsOkFocusedProperty =
+            DependencyProperty.Register(nameof(IsOkFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        internal bool IsYesFocused
+        {
+            get { return (bool)GetValue(IsYesFocusedProperty); }
+            set { SetValue(IsYesFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsPasswordBoxFocusedProperty =
+            DependencyProperty.Register(nameof(IsPasswordBoxFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+
+        private static readonly DependencyProperty IsYesFocusedProperty =
+            DependencyProperty.Register(nameof(IsYesFocused), typeof(bool),
+                typeof(DialogBoxWindow), null);
+        
+        internal bool IsPasswordBoxFocused
+        {
+            get { return (bool)GetValue(IsPasswordBoxFocusedProperty); }
+            set { SetValue(IsPasswordBoxFocusedProperty, value); }
+        }
+
+        internal bool? IsFormFocused
+        {
+            get { return (bool?)GetValue(IsFormFocusedProperty); }
+            set { SetValue(IsFormFocusedProperty, value); }
+        }
+
+        private static readonly DependencyProperty IsFormFocusedProperty =
+            DependencyProperty.Register(nameof(IsFormFocused), typeof(bool?),
+                typeof(DialogBoxWindow), null);
+
+
+        #endregion
 
         #region Button Visiblity
 

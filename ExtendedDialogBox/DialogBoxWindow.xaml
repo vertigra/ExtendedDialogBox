@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+        xmlns:local="clr-namespace:ExtendedDialogBox.Utils.Extension"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow"
         mc:Ignorable="d" 
@@ -14,7 +15,8 @@
         TextOptions.TextFormattingMode="Display" 
         TextOptions.TextRenderingMode="ClearType" 
         UseLayoutRounding="True"
-        Icon="{Binding WindowTitleIcon, ElementName=dialogBoxWindow}"       
+        Icon="{Binding WindowTitleIcon, ElementName=dialogBoxWindow}"
+        local:FocusExtension.IsFocused="{Binding IsFormFocused, ElementName=dialogBoxWindow}"
         MinHeight="155" MinWidth="154" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
@@ -71,7 +73,8 @@
                          Width="Auto"
                          VerticalAlignment="Center"
                          Margin="10 0 10 10"
-                         TextBlock.TextAlignment="Right"/>
+                         TextBlock.TextAlignment="Right"
+                         local:FocusExtension.IsFocused="{Binding IsPasswordBoxFocused, ElementName=dialogBoxWindow}"/>
 
             <Label Grid.Column="0"
                    Grid.Row="1"
@@ -106,7 +109,8 @@
                         IsCancel="True"
                         Command="{ Binding ButtonCommand, ElementName=dialogBoxWindow }"
                         CommandParameter="Cancel"
-                        Visibility="{ Binding CancelButtonVisiblity, ElementName=dialogBoxWindow }" >
+                        Visibility="{ Binding CancelButtonVisiblity, ElementName=dialogBoxWindow }"
+                        local:FocusExtension.IsFocused="{Binding IsCancelFocused, ElementName=dialogBoxWindow}">
                     
                     <Label 
                         Name="LabelCancel" 
@@ -125,7 +129,8 @@
                         DockPanel.Dock="Right"
                         Command="{ Binding ButtonCommand, ElementName=dialogBoxWindow }"
                         CommandParameter="No"
-                        Visibility="{ Binding NoButtonVisiblity, ElementName=dialogBoxWindow }" >
+                        Visibility="{ Binding NoButtonVisiblity, ElementName=dialogBoxWindow }" 
+                        local:FocusExtension.IsFocused="{Binding IsNoFocused, ElementName=dialogBoxWindow}">
 
                     <Label Name="LabelNo" 
                            Padding="0" 
@@ -144,7 +149,8 @@
                         DockPanel.Dock="Right"
                         Command="{ Binding ButtonCommand, ElementName=dialogBoxWindow }"
                         CommandParameter="Yes"
-                        Visibility="{ Binding YesButtonVisiblity, ElementName=dialogBoxWindow }" >
+                        Visibility="{ Binding YesButtonVisiblity, ElementName=dialogBoxWindow }"
+                        local:FocusExtension.IsFocused="{Binding IsYesFocused, ElementName=dialogBoxWindow}">
 
                     <Label Name="LabelYes" 
                            Padding="0" 
@@ -162,7 +168,8 @@
                         Height="26"
                         Command="{ Binding ButtonCommand, ElementName=dialogBoxWindow }"
                         CommandParameter="Ok"
-                        Visibility="{ Binding OkButtonVisiblity, ElementName=dialogBoxWindow }" >
+                        Visibility="{ Binding OkButtonVisiblity, ElementName=dialogBoxWindow }"
+                        local:FocusExtension.IsFocused="{Binding IsOkFocused, ElementName=dialogBoxWindow}">
 
                     <Label Name="LabelOk" 
                            Padding="0" 

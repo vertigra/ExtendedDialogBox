@@ -1,21 +1,27 @@
-﻿using ExtendedDialogBox.PublicDialogBox;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ExtendedDialogBox.Enum;
+using ExtendedDialogBox.PublicDialogBox;
+using NUnit.Framework;
+using System.Windows;
 
 namespace ExtendedDialogBoxTest
 {
-    [TestClass]
+    [TestFixture, RequiresSTA]
     public class DialogBoxTest
     {
-        [TestMethod, TestCategory("RunMannualy")]
+        
+        [Test, Explicit]
         public static void TestOkButton()
         {
             new DialogBox("Test").OkButton();
         }
 
-        [TestMethod, TestCategory("RunMannualy")]
+        [Test, Explicit]
         public static void TestOkButtonCustomContent()
         {
-            new DialogBox("Test").OkButton("CustomText");
+            DialogBox dialog = new DialogBox("Test") { Focused = Focused.OkButton};
+            MessageBoxResult result =  dialog.OkButton();
+
+            Assert.AreEqual(MessageBoxResult.OK, result);
         }
     }
 }
