@@ -60,6 +60,7 @@
     <Compile Include="Service\ExtendedDialog.cs" />
     <Compile Include="Utils\Extension.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="WarningDialogBoxTest.cs" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

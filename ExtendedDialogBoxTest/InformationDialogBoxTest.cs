@@ -4,12 +4,13 @@ using NUnit.Framework;
 namespace ExtendedDialogBoxTest
 {
     [TestFixture, RequiresSTA]
-    public class QuestionDialogBoxTest
+    public class InformationDialogBoxTest
     {
         [Test, Explicit]
-        public void SimpleQuestionDialogBox()
+        public void SimpleInformationDialogBox()
         {
-            new QuestionDialogBox("Test question dialog box").OkButton(); 
+            new InformationDialogBox("Test information dialog box").OkButton();
         }
+
     }
 }
